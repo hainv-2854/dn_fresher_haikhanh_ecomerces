@@ -1,43 +1,34 @@
-<main id="main">
-  <div class="container">
+<%= render "shared/banner" %>
 
-    <!--BANNER-->
-    <%= render "shared/banner" %>
-
-    <!--On Sale-->
-    <div class="wrap-show-advance-info-box style-1">
-      <h3 class="title-box"><%= t ".on_sale" %></h3>
-      <div class="wrap-top-banner">
-        <%= link_to "#", class: "link-banner banner-effect-2" do %>
-          <figure>
-            <%= image_tag("fashion-accesories-banner.jpg", alt: "", width: "1170", height: "240") %>
-          </figure>
-        <% end %>
-      </div>
-    </div>
-
-    <!--Latest Products-->
-    <div class="wrap-show-advance-info-box style-1">
-      <h3 class="title-box"><%= t ".latest_products" %></h3>
-      <div class="wrap-top-banner">
-        <%= link_to "#", class: "link-banner banner-effect-2" do %>
-          <figure>
-            <%= image_tag("digital-electronic-banner.jpg", alt: "", width: "1170", height: "240") %>
-          </figure>
-        <% end %>
-      </div>
-    </div>
-
-    <!--Product Categories-->
-    <div class="wrap-show-advance-info-box style-1">
-      <h3 class="title-box"><%= t ".product_categories" %></h3>
-      <div class="wrap-top-banner">
-        <%= link_to "#", class: "link-banner banner-effect-2" do %>
-          <figure>
-            <%= image_tag("fashion-accesories-banner.jpg", alt: "", width: "1170", height: "240") %>
-          </figure>
-        <% end %>
-      </div>
-    </div>
+<div class="wrap-show-advance-info-box style-1">
+  <h3 class="title-box"><%= t ".on_sale" %></h3>
+  <div class="wrap-top-banner">
+    <%= link_to "#", class: "link-banner banner-effect-2" do %>
+      <figure>
+        <%= image_tag("fashion-accesories-banner.jpg", alt: "", width: "1170", height: "240") %>
+      </figure>
+    <% end %>
   </div>
-</main>
+</div>
+
+<div class="wrap-show-advance-info-box style-1">
+  <h3 class="title-box"><%= t ".latest_products" %></h3>
+  <div class="wrap-top-banner">
+    <%= link_to "#", class: "link-banner banner-effect-2" do %>
+      <figure>
+        <%= image_tag("digital-electronic-banner.jpg", alt: "", width: "1170", height: "240") %>
+      </figure>
+    <% end %>
+  </div>
+</div>
+
+<div class="wrap-show-advance-info-box style-1">
+  <h3 class="title-box"><%= t ".product_categories" %></h3>
+  <div class="wrap-top-banner">
+    <%= link_to "#", class: "link-banner banner-effect-2" do %>
+      <figure>
+        <%= image_tag("fashion-accesories-banner.jpg", alt: "", width: "1170", height: "240") %>
+      </figure>
+    <% end %>
+  </div>
+</div>
