@@ -9,12 +9,13 @@ en:
     header:
       logo_text: "E-com"
       login: "Login"
+      logout: "Logout"
       sign_up: "Register"
       hot_line: "Hotline: (+123) 456 789"
       cart: "Cart"
       cart_item: "item"
       item_hot: "HOT SALE ITEMS"
-      item_new: "TOP NEW ITEMS"
+    navbar:
       about_us: "About Us"
       shop: "Shop"
       cart: "Cart"
@@ -67,6 +68,8 @@ en:
     create:
       invalid_email_password: "Login fail"
   products:
+    product:
+      add_to_cart: "Thêm vào giỏ hàng"
     index:
       title: "Products"
       home: "Home"
@@ -79,3 +82,10 @@ en:
       filter: "Filter"
       category: "Category"
       sub_category: "Sub category"
+    show:
+      not_found: "Not found product"
+      title: "Product details"
+      home: "Home"
+      detail: "Detail"
+      quantity: "Quantity: "
+      add_to_cart: "Add to cart"
