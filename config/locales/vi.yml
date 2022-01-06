@@ -1,2 +1,49 @@
-en:
-  hello: "Xin chào"
+vi:
+  static_pages:
+    title: "E-commerce"
+    home:
+      on_sale: "Giảm giá"
+      latest_products: "Sản phẩm mới"
+      product_categories: "Danh mục sản phẩm"
+  shared:
+    header:
+      logo_text: "E-com"
+      login: "Đăng nhập"
+      sign_up: "Đăng ký"
+      hot_line: "Số điện thoại: (+123) 456 789"
+      cart: "Giỏ hàng"
+      cart_item: "sản phẩm"
+      item_hot: "Sản phẩm hot"
+      item_new: "Sản phẩm mới"
+      about_us: "Giới thiệu"
+      shop: "Cửa hàng"
+      cart: "Giỏ hàng"
+      contact: "Liên hệ"
+    footer:
+      my_account: "Tài khoản của tôi"
+      free_ship: "Miễn phí giao hàng"
+      free_ship_detail: "Trên đơn hàng từ $100"
+      guarantee: "Bảo hành"
+      guarantee_detail: "100% hoàn trả tiền"
+      safe: "Thanh toán an toàn"
+      safe_detail: "An toàn cho thanh toán"
+      support: "Hỗ trợ 24/7"
+      support_detail: "Chúng tôi luôn sẵn sàng giúp đỡ bạn"
+      contact_details: "Chi tiết liên hệ"
+      contact_address: "15 Quang Trung, Câu Giấy, Hà Nội"
+      contact_phone: "Số điện thoại: (+123) 456 789"
+      contact_email: "lienhe@gmail.com"
+      hot_line: "Số điện thoại"
+      call_us: "Gọi cho chúng tôi"
+      phone: "(+123) 456 789"
+      info: "Thông tin"
+      contact_page: "Liên hệ"
+      orders_history: "Lịch sử đơn hàng"
+  pagy:
+    nav:
+      prev: "Trước"
+      next: "Tiếp theo"
+      gap: "..."
+  languages:
+    en: English
+    vi: "Tiếng Việt"

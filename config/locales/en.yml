@@ -1,2 +1,49 @@
 en:
-  hello: "Hello world"
+  static_pages:
+    title: "E-commerce"
+    home:
+      on_sale: "On Sale"
+      latest_products: "Latest Products"
+      product_categories: "Product Categories"
+  shared:
+    header:
+      logo_text: "E-com"
+      login: "Login"
+      sign_up: "Register"
+      hot_line: "Hotline: (+123) 456 789"
+      cart: "Cart"
+      cart_item: "item"
+      item_hot: "HOT SALE ITEMS"
+      item_new: "TOP NEW ITEMS"
+      about_us: "About Us"
+      shop: "Shop"
+      cart: "Cart"
+      contact: "Contact us"
+    footer:
+      my_account: "My Account"
+      free_ship: "Free Shipping"
+      free_ship_detail: "On order over $100"
+      guarantee: "GUARANTEE"
+      guarantee_detail: "100% money back"
+      safe: "Safe Payment"
+      safe_detail: "Safe your payment"
+      support: "24/7 SUPPORT"
+      support_detail: "We are always ready to help you"
+      contact_details: "Contact Details"
+      contact_address: "15 Quang Trung, Cau Giay, Ha Noi"
+      contact_phone: "Hotline: (+123) 456 789"
+      contact_email: "contact@gmail.com"
+      hot_line: "HOT LINE"
+      call_us: "Call us to free"
+      phone: "(+123) 456 789"
+      info: "Infomation"
+      contact_page: "Contact us"
+      orders_history: "Order History"
+  pagy:
+    nav:
+      prev: "Prev"
+      next: "Next"
+      gap: "..."
+  languages:
+    en: "English"
+    vi: "Vietnamese"
