@@ -47,3 +47,22 @@ vi:
   languages:
     en: English
     vi: "Tiếng Việt"
+  errors:
+    error_message: "Vui lòng sửa các lỗi sau: %{count} "
+    error_singular: "lỗi"
+    invalid_email_password_combination: "Email / Mật khẩu không hợp lệ"
+    not_activated: "Tài khoản của bạn chưa được kích hoạt. Vui lòng kiểm tra email của bạn để biết thêm chi tiết."
+  sessions:
+    new:
+      title: "Đăng Nhập"
+      new_user: "Bạn chưa có tài khoản"
+      password: "Mật khẩu"
+      login_success: "Đăng nhập thành công"
+      home: "Trang chủ"
+      login_to_account: "Đăng nhập"
+      email: "Địa chỉ email"
+      password: "Mật khẩu"
+      remember_me: "Nhớ mật khẩu"
+      forgot_password: "Quên mật khẩu?"
+    create:
+      invalid_email_password: "Đăng nhập thất bại"
