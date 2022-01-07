@@ -191,6 +191,7 @@ GEM
     nokogiri (1.12.5)
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
+    pagy (5.6.10)
     parallel (1.21.0)
     parser (3.1.0.0)
       ast (~> 2.4.1)
@@ -354,6 +355,7 @@ DEPENDENCIES
   listen (~> 3.3)
   mini_magick (= 4.9.5)
   mysql2 (~> 0.5.3)
+  pagy
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.4, >= 6.1.4.1)
