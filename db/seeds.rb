@@ -26,12 +26,12 @@ end
 50.times do |n|
   category_id = 1
   category_id = 2 if n > 25
-  product = Product.create(
-    name: Faker::Name.first_name,
+  Product.create(
+    name: Faker::Lorem.sentence,
     category_id: category_id,
-    price: 120000,
+    price: 1000 + n * 100,
     quantity: 10,
     image: "products/digital_20.jpg",
-    description: Faker::Lorem.sentence,
+    description: Faker::Lorem.paragraph_by_chars,
   )
 end

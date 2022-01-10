@@ -4,5 +4,11 @@ class ProductsController < ApplicationController
                             items: Settings.length.per_page_12
   end
 
-  def show; end
+  def show
+    @product = Product.find_by id: params[:id]
+    return if @product
+
+    flash[:danger] = t ".not_found"
+    redirect_to products_path
+  end
 end

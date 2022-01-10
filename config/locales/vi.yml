@@ -9,12 +9,14 @@ vi:
     header:
       logo_text: "E-com"
       login: "Đăng nhập"
+      logout: "Đăng xuất"
       sign_up: "Đăng ký"
       hot_line: "Số điện thoại: (+123) 456 789"
       cart: "Giỏ hàng"
       cart_item: "sản phẩm"
       item_hot: "Sản phẩm hot"
       item_new: "Sản phẩm mới"
+    navbar:
       about_us: "Giới thiệu"
       shop: "Cửa hàng"
       cart: "Giỏ hàng"
@@ -67,6 +69,8 @@ vi:
     create:
       invalid_email_password: "Đăng nhập thất bại"
   products:
+    product:
+      add_to_cart: "Thêm vào giỏ hàng"
     index:
       title: "Danh sách sản phẩm"
       home: "Trang chủ"
@@ -79,3 +83,10 @@ vi:
       filter: "Lọc"
       category: "Danh mục"
       sub_category: "Danh mục con"
+    show:
+      not_found: "Không tìm thấy sản phẩm"
+      title: "Chi tiết sản phẩm"
+      home: "Trang chủ"
+      detail: "Chi tiết"
+      quantity: "Số lượng: "
+      add_to_cart: "Thêm vào giỏ hàng"

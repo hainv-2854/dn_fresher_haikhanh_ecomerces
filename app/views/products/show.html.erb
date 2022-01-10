@@ -1,0 +1,41 @@
+<% provide :title, t(".title") %>
+<div class="wrap-breadcrumb">
+  <ul>
+    <li class="item-link"><%= link_to t(".home"), home_path, class: "link" %></li>
+    <li class="item-link"><span><%= t ".detail" %></span></li>
+  </ul>
+</div>
+<div class="row">
+  <div class="col-xs-12 main-content-area">
+    <div class="wrap-product-detail">
+      <div class="detail-media">
+        <div class="product-gallery">
+          <ul class="slides">
+             <%= image_tag @product.image, alt: "" %>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="detail-info">
+        <h2 class="product-name"><%= @product.name %></h2>
+        <div class="short-desc">
+          <ul>
+            <li><%= @product.description %></li>
+          </ul>
+        </div>
+        <div class="wrap-price"><span class="product-price"><%= @product.price %></span></div>
+        <div class="quantity">
+          <span><%= t ".quantity" %></span>
+          <div class="quantity-input">
+            <input type="text" name="product-quatity" value="1" data-max="120" pattern="[0-9]*" >
+            <button class="btn btn-reduce" href="#"></button>
+            <button class="btn btn-increase" href="#"></button>
+          </div>
+        </div>
+        <div class="wrap-butons">
+          <button class="btn add-to-cart"><%= t ".add_to_cart" %></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
