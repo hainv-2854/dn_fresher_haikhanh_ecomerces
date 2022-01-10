@@ -1,0 +1,18 @@
+<li class="col-lg-4 col-md-6 col-sm-6 col-xs-6 ">
+  <div class="product product-style-3 equal-elem ">
+    <div class="product-thumnail">
+      <%= link_to product do %>
+        <figure>
+          <%= image_tag(product.image, alt: "") %>
+        </figure>
+      <% end %>
+    </div>
+    <div class="product-info">
+      <%= link_to product, class: "product-name" do %>
+        <span><%= product.name %></span>
+      <% end %>
+      <div class="wrap-price"><span class="product-price"><span><%= product.price %></span></div>
+      <%= link_to t(".add_to_cart"), product, class: "btn add-to-cart" %>
+    </div>
+  </div>
+</li>

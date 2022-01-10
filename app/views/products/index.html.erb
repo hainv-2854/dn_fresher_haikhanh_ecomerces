@@ -1,0 +1,59 @@
+<% provide :title, t(".title") %>
+<div class="wrap-breadcrumb">
+  <ul>
+    <li class="item-link"><%= link_to t(".sub_category"), "#", class: "link" %></li>
+    <li class="item-link"><span><%= t ".digital_electronic" %></span></li>
+  </ul>
+</div>
+<div class="row">
+  <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 sitebar">
+    <div class="widget mercado-widget categories-widget">
+      <h2 class="widget-title"><%= t ".all_categories" %></h2>
+      <div class="widget-content">
+        <ul class="list-category">
+          <li class="category-item has-child-cate">
+            <%= link_to t(".category"), "#", class: "cate-link" %>
+            <span class="toggle-control">+</span>
+            <ul class="sub-cate">
+              <li class="category-item"><%= link_to t(".sub_category"), "#", class: "cate-link" %></li>
+            </ul>
+          </li>
+          <li class="category-item">
+            <%= link_to t(".category"), "#", class: "cate-link" %>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="widget mercado-widget filter-widget price-filter">
+      <h2 class="widget-title"><%= t ".price" %></h2>
+      <div class="widget-content">
+        <div id="slider-range"></div>
+        <p>
+          <label for="amount"><%= t ".price" %> :</label>
+          <input type="text" id="amount" readonly>
+          <button class="filter-submit"><%= t ".filter" %></button>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 main-content-area">
+    <div class="banner-shop">
+      <%= link_to "#", class: "banner-link" do %>
+        <figure><%= image_tag("shop-banner.jpg", alt: "") %></figure>
+      <% end %>
+    </div>
+    <div class="wrap-shop-control">
+      <h1 class="shop-title"><%= t ".digital_electronic" %></h1>
+    </div>
+    <div class="row">
+      <ul class="product-list grid-products equal-container">
+        <%= render @products %>
+      </ul>
+    </div>
+    <div class="wrap-pagination-info">
+      <ul class="page-numbers">
+        <%== pagy_bootstrap_nav(@pagy) %>
+      </ul>
+    </div>
+  </div>
+</div>

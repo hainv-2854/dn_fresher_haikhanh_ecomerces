@@ -66,3 +66,16 @@ vi:
       forgot_password: "Quên mật khẩu?"
     create:
       invalid_email_password: "Đăng nhập thất bại"
+  products:
+    index:
+      title: "Danh sách sản phẩm"
+      home: "Trang chủ"
+      digital_electronic: "Kỹ thuật số và công nghệ"
+      all_categories: "Tất cả danh mục"
+      price: "Giá"
+      add_to_cart: "Thêm vào giỏ hàng"
+      grid: "Lưới"
+      list: "Danh sách"
+      filter: "Lọc"
+      category: "Danh mục"
+      sub_category: "Danh mục con"
