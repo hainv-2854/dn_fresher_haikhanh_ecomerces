@@ -31,7 +31,23 @@ end
     category_id: category_id,
     price: 1000 + n * 100,
     quantity: 10,
-    image: "products/digital_20.jpg",
     description: Faker::Lorem.paragraph_by_chars,
   )
 end
+
+10.times do |n|
+  Address.create(
+    user_id: n + 1,
+    address_detail: Faker::Address.street_address,
+    phone: Faker::PhoneNumber.phone_number,
+  )
+end
+
+10.times do |n|
+  user_id = n + 1
+  address_id = n + 1
+  o = Order.new user_id: user_id, address_id: address_id
+  o.order_details.build product_id: 1, quantity: 1, price: 1000 + n * 100
+  o.save!
+end
+

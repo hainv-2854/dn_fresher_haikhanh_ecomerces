@@ -28,6 +28,22 @@ vi:
         description: "Mô tả"
         product_left: "Sản phẩm còn lại"
         not_found: "Không tìm thấy sản phẩm"
+    orders:
+      index:
+        name: "Tên"
+        status: "Trạng thái"
+        clear_search: "Xóa tìm kiếm"
+        user_name: "Tên người đặt"
+        user_phone: "Số điện thoại"
+        created_at: "Ngày đặt"
+        address: "Địa chỉ"
+        status: "Trạng thái"
+        total_price: "Tổng tiền"
+        delivered: "Đã giao"
+        action: "Hành động"
+        no_order_found: "Không tìm thấy đơn hàng"
+      order:
+        save_change: "Lưu thay đổi"
     layouts:
       header:
         profile: "Thông tin cá nhân"

@@ -13,6 +13,10 @@ Rails.application.routes.draw do
       get "/home", to: "static_pages#home"
       delete "/logout", to: "static_pages#destroy"
       resources :products
+      resources :users
+      resources :orders do
+        resources :order_details, only: :index
+      end
     end
   end
 end
