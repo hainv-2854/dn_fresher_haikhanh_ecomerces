@@ -132,3 +132,9 @@ en:
       detail: "Detail"
       quantity: "Quantity: "
       add_to_cart: "Add to cart"
+  carts:
+    create:
+      add_success: "Add to cart success"
+      not_enough: "Quantity is not enough"
+    load_product:
+      not_found: "Not found product"

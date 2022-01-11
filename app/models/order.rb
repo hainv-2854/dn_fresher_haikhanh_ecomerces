@@ -6,10 +6,12 @@ class Order < ApplicationRecord
   delegate :phone, :address_detail, to: :address, prefix: true
 
   enum status: {pending: 0, accept: 1, resolved: 2, rejected: 3}
-  
+
   scope :recent_orders, ->{order(status: :asc, created_at: :desc)}
 
   def calculate_total
-    order_details.reduce(0){|total, item| total + item.quantity * item.price}
+    order_details.reduce(0) do |total, item|
+      total + item.quantity * item.price
+    end
   end
 end

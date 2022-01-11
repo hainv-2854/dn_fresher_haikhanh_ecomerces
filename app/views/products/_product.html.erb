@@ -3,7 +3,7 @@
     <div class="product-thumnail">
       <%= link_to product do %>
         <figure>
-          <%= image_tag(product.image, alt: "") %>
+          <%= image_tag show_image(product), alt: "" %>
         </figure>
       <% end %>
     </div>
