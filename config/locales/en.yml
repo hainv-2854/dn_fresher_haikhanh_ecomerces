@@ -5,6 +5,33 @@ en:
       on_sale: "On Sale"
       latest_products: "Latest Products"
       product_categories: "Product Categories"
+  admin:
+    title: "Admin E-com"
+    search: "Search"
+    dashboard: "Dashboard"
+    user_manager: "User Manager"
+    product_manager: "Product Manager"
+    category_manager: "Category Manager"
+    order_manager: "Order Manager"
+    products:
+      index:
+        sort: "Sort"
+        add_product: "Add Product"
+        id: "ID"
+        name: "Name"
+        price: "Price"
+        quantity: "Quantity"
+        description: "Description"
+        image: "Image"
+        action: "Action"
+      show:
+        description: "Description"
+        product_left: "Product Left"
+        not_found: "Product not found"
+    layouts:
+      header:
+        profile: "Profile"
+        logout: "Logout"
   shared:
     header:
       logo_text: "E-com"

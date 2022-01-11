@@ -1,0 +1,49 @@
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+  <!-- Sidebar - Brand -->
+  <%= link_to admin_home_path, class: "sidebar-brand" do %>
+    <div class="sidebar-brand-text mx-3"><%= t "admin.title" %></div>
+  <% end %>
+  <!-- Divider -->
+  <hr class="sidebar-divider my-0">
+  <!-- Nav Item - Dashboard -->
+  <li class="nav-item active">
+    <%= link_to admin_home_path, class: "nav-link" do %>
+      <i class="fas fa-fw fa-tachometer-alt"></i>
+      <span><%= t "admin.dashboard" %></span>
+    <% end %>
+  </li>
+  <!-- Divider -->
+  <hr class="sidebar-divider">
+  <!-- Heading -->
+  <div class="sidebar-heading">
+    <%= t "admin.function" %>
+  </div>
+  <li class="nav-item">
+    <%= link_to "#", class: "nav-link" do %>
+      <i class="fas fa-fw fa-cog"></i>
+      <span><%= t "admin.user_manager" %></span>
+    <% end %>
+  </li>
+  <li class="nav-item">
+    <%= link_to admin_products_path, class: "nav-link" do %>
+      <i class="fas fa-fw fa-cog"></i>
+      <span><%= t "admin.product_manager" %></span>
+    <% end %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "#", class: "nav-link" do %>
+      <i class="fas fa-fw fa-cog"></i>
+      <span><%= t "admin.category_manager" %></span>
+    <% end %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "#", class: "nav-link" do %>
+      <i class="fas fa-fw fa-cog"></i>
+      <span><%= t "admin.order_manager" %></span>
+    <% end %>
+  </li>
+  <hr class="sidebar-divider">
+  <div class="text-center d-none d-md-inline">
+      <button class="rounded-circle border-0" id="sidebarToggle"></button>
+  </div>
+</ul>

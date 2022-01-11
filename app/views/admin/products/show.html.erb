@@ -1,0 +1,22 @@
+<main class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <%= image_tag show_image(@product), class: "w-100" %>
+    </div>
+    <div class="col-md-8">.
+      <div class="product-description">
+        <span><%= @product.name %></span>
+        <h1><%= t ".description" %></h1>
+        <p><%= @product.description %></p>
+      </div>
+      <hr>
+      <div class="product-price">
+        <span><%= number_to_currency(@product.price, locale: :vi) %></span>
+      </div>
+      <p>
+        <%= @product.quantity %>
+        <%= t ".product_left" %>
+      </p>
+    </div>
+  </div>
+</main>

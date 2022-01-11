@@ -5,6 +5,33 @@ vi:
       on_sale: "Giảm giá"
       latest_products: "Sản phẩm mới"
       product_categories: "Danh mục sản phẩm"
+  admin:
+    title: "Quản lý E-com"
+    search: "Tìm kiếm"
+    dashboard: "Bảng điều khiển"
+    user_manager: "Quản lý người dùng"
+    product_manager: "Quản lý sản phẩm"
+    category_manager: "Quản lý danh mục"
+    order_manager: "Quản lý đơn hàng"
+    products:
+      index:
+        sort: "Sắp xếp"
+        add_product: "Thêm sản phẩm"
+        id: "ID"
+        name: "Tên"
+        price: "Giá"
+        quantity: "Số lượng"
+        description: "Mô tả"
+        image: "Hình ảnh"
+        action: "Hành động"
+      show:
+        description: "Mô tả"
+        product_left: "Sản phẩm còn lại"
+        not_found: "Không tìm thấy sản phẩm"
+    layouts:
+      header:
+        profile: "Thông tin cá nhân"
+        logout: "Đăng xuất"
   shared:
     header:
       logo_text: "E-com"

@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+  <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+    <i class="fa fa-bars"></i>
+  </button>
+  <div class="language-admin">
+    <%= link_to image_tag("lang-en.png"), locale: :en %>
+    <%= link_to image_tag("lang-vi.png"), locale: :vi %>
+  </div>
+  <ul class="navbar-nav ml-auto d-flex align-items-center">
+    <div class="topbar-divider d-none d-sm-block"></div>
+    <li class="nav-item dropdown no-arrow">
+      <%= link_to "#", id: "userDropdown", class: "nav-link" do %>
+        <% image_tag "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/512px-Circle-icons-profile.svg.png", class: "img-profile rounded-circle" %>
+      <% end %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t(".profile"), "#", class: "dropdown-item" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t(".logout"), "#", class: "dropdown-item" %>
+    </li>
+  </ul>
+</nav>
