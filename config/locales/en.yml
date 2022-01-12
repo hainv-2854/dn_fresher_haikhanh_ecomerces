@@ -28,6 +28,22 @@ en:
         description: "Description"
         product_left: "Product Left"
         not_found: "Product not found"
+    orders:
+      index:
+        name: "Name"
+        status: "Status"
+        clear_search: "Clear Search"
+        user_name: "Orderer Name"
+        user_phone: "Phone Number"
+        created_at: "Created at"
+        address: "Address"
+        status: "Status"
+        total_price: "Total Price"
+        delivered: "Delivered"
+        action: "Action"
+        no_order_found: "No order found"
+      order:
+        save_change: "Save Change"
     layouts:
       header:
         profile: "Profile"
