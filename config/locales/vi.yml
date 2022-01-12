@@ -156,14 +156,27 @@ vi:
       home: "Trang chủ"
       cart: "Giỏ hàng"
       product_name: "Tên sản phẩm"
+      quantity: "Số lượng"
+      price: "Giá (VNĐ)"
+      total_item: "Thành tiền (VNĐ)"
       order_sumany: "Tóm tắt giỏ hàng"
-      total: "Tổng tiền"
+      total: "Tổng tiền (VNĐ)"
       check_out: "Thanh toán"
       clear_cart: "Xóa giỏ hàng"
       update_cart: "Cập nhật giỏ hàng"
       quantity_product: "Số lượng sản phẩm"
+      confirm_delete: "Bạn có muốn xóa sản phẩm này?"
     create:
       add_success: "Thêm vào giỏ hàng thành công"
       not_enough: "Số lượng hàng không đủ"
+    update:
+      update_success: "Cập nhật thành công"
+      not_enough: "Số lượng không đủ"
+      not_found: "Không tìm thấy sản phẩm"
+    destroy:
+      not_found: "Không tìm thấy sản phẩm"
+      delete_success: "Xóa thành công"
+    destroy_all:
+      delete_success: "Xóa thành công"
     load_product:
       not_found: "Không tìm thấy sản phẩm"

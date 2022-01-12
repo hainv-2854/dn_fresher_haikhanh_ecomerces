@@ -70,7 +70,7 @@
                 <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                 <div class="left-info">
                   <%= link_to carts_path do %>
-                    <span class="index"><%= "#{count_current_cart} #{t(".cart_item")}" %></span>
+                    <span class="index"><strong class="count-items-cart-hd"><%= count_current_cart %></strong> <%= t ".cart_item" %></span>
                     <span class="title"><%= t ".cart" %></span>
                   <% end %>
                 </div>

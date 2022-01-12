@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
-  before_action :load_product, :check_quantity, only: :create
+  before_action :load_product, :check_quantity, only: %i(create update)
+  before_action :check_product_cart, only: %i(update destroy)
 
   def index
     @cart_items = load_product_in_cart
@@ -9,19 +10,52 @@ class CartsController < ApplicationController
   def create
     add_to_cart params[:product_id], params[:quantity]
     flash[:success] = t ".add_success"
-    redirect_back fallback_location: root_path
+    redirect_back_current
+  end
+
+  def update
+    current_cart[params[:product_id].to_s] = params[:quantity].to_i
+    flash[:success] = t ".update_success"
+    redirect_back_current
+  end
+
+  def destroy
+    current_cart.delete params[:product_id]
+    flash[:success] = t ".delete_success"
+    redirect_back_current
+  end
+
+  def destroy_all
+    session[:cart] = {}
+    flash[:success] = t ".delete_success"
+    redirect_back_current
   end
 
   private
 
   def check_quantity
     quantity = params[:quantity].to_i
-    product_id = params[:product_id]
-    quantity += current_cart[product_id] if current_cart[product_id].present?
+    quantity += current_cart[params[:product_id]] if check_product_id?
+    quantity = params[:quantity].to_i if check_update?
     return if @product.quantity >= quantity
 
     flash[:danger] = t ".not_enough"
-    redirect_back fallback_location: root_path
+    redirect_back_current
+  end
+
+  def check_product_id?
+    current_cart[params[:product_id]].present?
+  end
+
+  def check_product_cart
+    return if current_cart[params[:product_id]].present?
+
+    flash[:danger] = t ".not_found"
+    redirect_back_current
+  end
+
+  def check_update?
+    params[:is_update].present?
   end
 
   def load_product
@@ -29,7 +63,7 @@ class CartsController < ApplicationController
     return if @product
 
     flash[:danger] = t ".not_found"
-    redirect_to static_pages_home_path
+    redirect_to products_path
   end
 
   def load_product_in_cart
@@ -50,5 +84,9 @@ class CartsController < ApplicationController
     cart_items.reduce(0) do |total, item|
       total + item[:total_price_item]
     end
+  end
+
+  def redirect_back_current
+    redirect_back fallback_location: root_path
   end
 end
