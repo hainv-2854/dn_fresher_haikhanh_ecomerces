@@ -156,14 +156,24 @@ en:
       home: "Home"
       cart: "Cart"
       product_name: "Products Name"
+      quantity: "quantity"
+      price: "Price (VND)"
+      total_item: "Total price (VND)"
       order_sumany: "Order summary"
-      total: "Total"
+      total: "Total (VND)"
       check_out: "Check out"
       clear_cart: "Clear shopping cart"
       update_cart: "Update shopping cart"
       quantity_product: "Quantity product"
+      confirm_delete: "Are you sure you want to delete this item?"
     create:
       add_success: "Add to cart success"
       not_enough: "Quantity is not enough"
+    update:
+      update_success: "Update to cart success"
+      not_enough: "Quantity is not enough"
+      not_found: "Not found product"
+    destroy:
+      not_found: "Not found product"
     load_product:
       not_found: "Not found product"
