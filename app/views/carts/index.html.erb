@@ -1,0 +1,58 @@
+<% provide :title, t(".title") %>
+<div class="wrap-breadcrumb">
+  <ul>
+    <li class="item-link"><%= link_to t(".home"), home_path, class: "link" %></li>
+    <li class="item-link"><span><%= t ".cart" %></span></li>
+  </ul>
+</div>
+<div class=" main-content-area">
+  <div class="wrap-iten-in-cart">
+    <h3 class="box-title"><%= t ".product_name" %></h3>
+    <ul class="products-cart">
+      <% @cart_items.each do |item| %>
+        <li class="pr-cart-item">
+          <div class="product-image">
+            <figure>
+              <%= image_tag show_image(item.dig :product), alt: "" %>
+            </figure>
+          </div>
+          <div class="product-name">
+            <%= link_to item.dig(:product).name, product_path(item.dig(:product).id), class: "link-to-product" %>
+          </div>
+          <div class="price-field produtc-price"><p class="price"><%= number_to_currency(item.dig(:product).price, locale: :vi) %></p></div>
+          <div class="quantity">
+            <div class="quantity-input">
+              <%= form_with do |f| %>
+                <td class="ty-cart-content__product-elem ty-cart-content__qty ">
+                  <%= f.text_field :quantity, value: item.dig(:quantity_order), min: 1, step: 1 %>
+                </td>
+              <% end %>
+              <button class="btn btn-increase"></button>
+              <button class="btn btn-reduce"></button>
+            </div>
+          </div>
+          <div class="price-field sub-total"><p class="price"><%= number_to_currency(item.dig(:total_price_item), locale: :vi) %></p></div>
+          <div class="delete">
+            <button class="btn btn-delete">
+              <i class="fa fa-times-circle" aria-hidden="true"></i>
+            </button>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="summary row">
+    <div class="order-summary col-8">
+      <h4 class="title-box"><%= t ".order_sumany" %></h4>
+      <p class="summary-info total-info "><span class="title"><%= t ".quantity_product" %></span><b class="index"><%= @cart_items.count %></b></p>
+      <p class="summary-info total-info "><span class="title"><%= t ".total" %></span><b class="index"><%= number_to_currency(@total_price_cart, locale: :vi) %></b></p>
+      <div class="checkout-info col-12 px-5">
+        <%= link_to t(".check_out"), "#", class: "btn btn-checkout" %>
+      </div>
+    </div>
+    <div class="update-clear col-4 pt-5">
+      <button class="btn btn-clear" href="#"><%= t ".clear_cart" %></button>
+      <button class="btn btn-update" href="#"><%= t ".update_cart" %></button>
+    </div>
+  </div>
+</div>

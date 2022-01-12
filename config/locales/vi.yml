@@ -134,6 +134,17 @@ vi:
       quantity: "Số lượng: "
       add_to_cart: "Thêm vào giỏ hàng"
   carts:
+    index:
+      title: "Chi tiết giỏ hàng"
+      home: "Trang chủ"
+      cart: "Giỏ hàng"
+      product_name: "Tên sản phẩm"
+      order_sumany: "Tóm tắt giỏ hàng"
+      total: "Tổng tiền"
+      check_out: "Thanh toán"
+      clear_cart: "Xóa giỏ hàng"
+      update_cart: "Cập nhật giỏ hàng"
+      quantity_product: "Số lượng sản phẩm"
     create:
       add_success: "Thêm vào giỏ hàng thành công"
       not_enough: "Số lượng hàng không đủ"

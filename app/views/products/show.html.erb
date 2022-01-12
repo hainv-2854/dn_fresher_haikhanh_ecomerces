@@ -24,7 +24,7 @@
           </ul>
         </div>
         <div class="wrap-price"><span class="product-price"><%= number_to_currency(@product.price, locale: :vi) %></span></div>
-        <%= form_with url: add_to_cart_path do |f| %>
+        <%= form_with url: carts_path do |f| %>
           <%= f.hidden_field :product_id, value: @product.id %>
           <div class="quantity">
             <span><%= t ".quantity" %></span>

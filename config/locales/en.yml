@@ -133,6 +133,17 @@ en:
       quantity: "Quantity: "
       add_to_cart: "Add to cart"
   carts:
+    index:
+      title: "Cart Details"
+      home: "Home"
+      cart: "Cart"
+      product_name: "Products Name"
+      order_sumany: "Order summary"
+      total: "Total"
+      check_out: "Check out"
+      clear_cart: "Clear shopping cart"
+      update_cart: "Update shopping cart"
+      quantity_product: "Quantity product"
     create:
       add_success: "Add to cart success"
       not_enough: "Quantity is not enough"

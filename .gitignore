@@ -31,6 +31,7 @@ yarn-debug.log*
 .vscode/extensions.json
 .framgia-ci-reports/
 .framgia-ci-result.temp.yml
+package-lock.json
 
 config/settings.local.yml
 config/settings/*.local.yml
