@@ -16,4 +16,8 @@ module ApplicationHelper
   def count_current_cart
     current_cart.count
   end
+
+  def get_order_statuses
+    Order.statuses.map{|k, v| [k, v]}
+  end
 end

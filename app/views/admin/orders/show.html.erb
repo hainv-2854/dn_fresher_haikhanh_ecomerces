@@ -1,0 +1,15 @@
+<div class="mb-4"><%= link_to t(".back"), admin_orders_path, class: "btn btn-outline-primary config-showall" %></div>
+
+<table class="table table-bordered table-hover">
+  <thead class="thead-inverse|thead-default">
+    <tr>
+      <th><%= t ".product_name" %></th>
+      <th><%= t ".product_image" %></th>
+      <th><%= t ".quantity" %></th>
+      <th><%= t ".price" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: "shared/order_detail" , locals: {zone: @order} %>
+  </tbody>
+</table>

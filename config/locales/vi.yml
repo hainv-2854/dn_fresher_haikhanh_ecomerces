@@ -42,8 +42,25 @@ vi:
         delivered: "Đã giao"
         action: "Hành động"
         no_order_found: "Không tìm thấy đơn hàng"
+      update:
+        update_status_success: "Cập nhật thành công"
+        update_status_fail: "Cập nhật thất bại - Trạng thái phải là: [Accept, Resolved, Rejected]"
       order:
         save_change: "Lưu thay đổi"
+        delete_order: "Xóa đơn hàng"
+        delete_order_confirm: "Bạn có chắc chắn muốn xóa đơn hàng này?"
+        user_canceled_order: "Người dùng hủy đơn"
+        resolved_order: "Đã giao: "
+        rejected_order: "Đơn bị từ chối: "
+        rejected_reason: "Lý do từ chối:"
+    order_details:
+      index:
+        back: "Quay lại"
+        product_name: "Tên sản phẩm"
+        product_image: "Hình ảnh"
+        price: "Giá"
+        quantity: "Số lượng"
+        not_found: "Không tìm thấy đơn hàng"
     layouts:
       header:
         profile: "Thông tin cá nhân"
