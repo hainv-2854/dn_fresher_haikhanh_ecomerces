@@ -175,5 +175,8 @@ en:
       not_found: "Not found product"
     destroy:
       not_found: "Not found product"
+      delete_success: "Delete success"
+    destroy_all:
+      delete_success: "Delete success"
     load_product:
       not_found: "Not found product"

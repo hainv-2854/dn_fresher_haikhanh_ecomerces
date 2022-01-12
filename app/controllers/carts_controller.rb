@@ -10,22 +10,25 @@ class CartsController < ApplicationController
   def create
     add_to_cart params[:product_id], params[:quantity]
     flash[:success] = t ".add_success"
-    redirect_back fallback_location: root_path
+    redirect_back_current
   end
 
   def update
     current_cart[params[:product_id].to_s] = params[:quantity].to_i
     flash[:success] = t ".update_success"
-    redirect_back fallback_location: root_path
+    redirect_back_current
   end
 
   def destroy
     current_cart.delete params[:product_id]
+    flash[:success] = t ".delete_success"
+    redirect_back_current
   end
 
   def destroy_all
     session[:cart] = {}
-    redirect_back fallback_location: root_path
+    flash[:success] = t ".delete_success"
+    redirect_back_current
   end
 
   private
@@ -37,7 +40,7 @@ class CartsController < ApplicationController
     return if @product.quantity >= quantity
 
     flash[:danger] = t ".not_enough"
-    redirect_back fallback_location: root_path
+    redirect_back_current
   end
 
   def check_product_id?
@@ -48,7 +51,7 @@ class CartsController < ApplicationController
     return if current_cart[params[:product_id]].present?
 
     flash[:danger] = t ".not_found"
-    redirect_back fallback_location: root_path
+    redirect_back_current
   end
 
   def check_update?
