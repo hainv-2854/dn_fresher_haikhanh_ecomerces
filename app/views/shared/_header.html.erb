@@ -69,8 +69,10 @@
               <%= link_to "#", class: "link-direction" do %>
                 <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                 <div class="left-info">
-                  <span class="index">4 <%= t ".cart_item"%></span>
-                  <span class="title"><%= t ".cart" %></span>
+                  <%= link_to carts_path do %>
+                    <span class="index"><%= "#{count_current_cart} #{t(".cart_item")}" %></span>
+                    <span class="title"><%= t ".cart" %></span>
+                  <% end %>
                 </div>
               <% end %>
             </div>
