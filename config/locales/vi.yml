@@ -133,3 +133,9 @@ vi:
       detail: "Chi tiết"
       quantity: "Số lượng: "
       add_to_cart: "Thêm vào giỏ hàng"
+  carts:
+    create:
+      add_success: "Thêm vào giỏ hàng thành công"
+      not_enough: "Số lượng hàng không đủ"
+    load_product:
+      not_found: "Không tìm thấy sản phẩm"
