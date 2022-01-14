@@ -42,8 +42,26 @@ en:
         delivered: "Delivered"
         action: "Action"
         no_order_found: "No order found"
+      update:
+        update_status_success: "Update status success"
+        update_status_fail: "Status update fail - status must be: [Accept, Rejected, Resolved]"
       order:
         save_change: "Save Change"
+        delete_order: "Delete Order"
+        delete_order_confirm: "Are you sure to delete this order?"
+        user_canceled_order: "User canceled"
+        resolved_order: "Resolved order: "
+        rejected_order: "Rejected order: "
+        rejected_reason: "Rejected reason:"
+    order_details:
+      index:
+        back: "Back"
+        product_name: "Product Name"
+        product_image: "Product Image"
+        price: "Price"
+        quantity: "Quantity"
+        not_found: "Order not found"
+
     layouts:
       header:
         profile: "Profile"

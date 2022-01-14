@@ -3,9 +3,13 @@ regex:
 length:
   per_page_12: 12
   per_page_5: 5
+  zero: 0
 admin:
   product_sorts: [["All", 1], ["Oldest", 2], ["Newest", 3], ["Price ASC", 4], ["Price DESC", 5]]
 order:
   ASC: "ASC"
   DESC: "DESC"
-  status: [["pending", 0], ["accept", 1], ["resolved", 2], ["rejected", 3]]
+  statuses: [["pending", 0], ["accept", 1], ["resolved", 2], ["rejected", 3]]
+  status_pending: [["pending", 0], ["accept", 1], ["rejected", 3]]
+  status_accept: [["accept", 1], ["resolved", 2], ["rejected", 3]]
+  status_rejected: [["accept", 1] ,["rejected", 3]]

@@ -1,0 +1,8 @@
+<% zone.order_details.each do |detail| %>
+  <tr>
+    <td><%= detail.product_name %></td>
+    <td><%= image_tag show_image detail.product %></td>
+    <td><%= detail.quantity %></td>
+    <td><%= number_to_currency(detail.price, locale: :vi) %></td>
+  </tr>
+<% end %>
