@@ -7,33 +7,40 @@
 </div>
 <div class=" main-content-area">
   <div class="wrap-iten-in-cart">
-    <h3 class="box-title"><%= t ".product_name" %></h3>
+    <div class="row">
+      <h3 class="box-title col-5"><%= t ".product_name" %></h3>
+      <h3 class="box-title col-2"><%= t ".price" %></h3>
+      <h3 class="box-title col-2"><%= t ".quantity" %></h3>
+      <h3 class="box-title col-2"><%= t ".total_item" %></h3>
+    </div>
     <ul class="products-cart">
       <% @cart_items.each do |item| %>
         <li class="pr-cart-item">
-          <div class="product-image">
+          <div class="product-image col-1">
             <figure>
               <%= image_tag show_image(item.dig :product), alt: "" %>
             </figure>
           </div>
-          <div class="product-name">
+          <div class="product-name col-3">
             <%= link_to item.dig(:product).name, product_path(item.dig(:product).id), class: "link-to-product" %>
           </div>
-          <div class="price-field produtc-price"><p class="price"><%= number_to_currency(item.dig(:product).price, locale: :vi) %></p></div>
-          <div class="quantity">
+          <div class="price-field produtc-price col-2"><p class="price price-product"><%= number_with_delimiter(item.dig(:product).price, :delimiter => '.') %></p></div>
+          <div class="quantity col-3">
             <div class="quantity-input">
-              <%= form_with do |f| %>
+              <%= form_tag cart_path(item[:product]), remote: true, method: :put do %>
                 <td class="ty-cart-content__product-elem ty-cart-content__qty ">
-                  <%= f.text_field :quantity, value: item.dig(:quantity_order), min: 1, step: 1 %>
+                  <%= number_field_tag :quantity, item.dig(:quantity_order), min: 1, step: 1 %>
+                  <%= hidden_field_tag :product_id, item.dig(:product).id %>
+                  <%= hidden_field_tag :is_update, 1 %>
                 </td>
               <% end %>
               <button class="btn btn-increase"></button>
               <button class="btn btn-reduce"></button>
             </div>
           </div>
-          <div class="price-field sub-total"><p class="price"><%= number_to_currency(item.dig(:total_price_item), locale: :vi) %></p></div>
-          <div class="delete">
-            <button class="btn btn-delete">
+          <div class="price-field sub-total col-2"><p class="price total-price-item"><%= number_with_delimiter(item.dig(:total_price_item), :delimiter => '.') %></p></div>
+          <div class="delete col-1">
+            <button class="btn btn-delete delete-item-cart">
               <i class="fa fa-times-circle" aria-hidden="true"></i>
             </button>
           </div>
@@ -44,15 +51,15 @@
   <div class="summary row">
     <div class="order-summary col-8">
       <h4 class="title-box"><%= t ".order_sumany" %></h4>
-      <p class="summary-info total-info "><span class="title"><%= t ".quantity_product" %></span><b class="index"><%= @cart_items.count %></b></p>
-      <p class="summary-info total-info "><span class="title"><%= t ".total" %></span><b class="index"><%= number_to_currency(@total_price_cart, locale: :vi) %></b></p>
+      <p class="summary-info total-info "><span class="title"><%= t ".quantity_product" %></span><strong class="index count-items-cart"><%= @cart_items.count %></strong></p>
+      <p class="summary-info total-info "><span class="title"><%= t ".total" %></span><strong class="index total-price-cart"><%= number_with_delimiter(@total_price_cart, :delimiter => '.') %></strong></p>
       <div class="checkout-info col-12 px-5">
         <%= link_to t(".check_out"), "#", class: "btn btn-checkout" %>
       </div>
     </div>
     <div class="update-clear col-4 pt-5">
-      <button class="btn btn-clear" href="#"><%= t ".clear_cart" %></button>
-      <button class="btn btn-update" href="#"><%= t ".update_cart" %></button>
+      <%= link_to t(".clear_cart"), delete_all_carts_path, data: {confirm: t(".confirm_delete")}, class: "btn btn-checkout" %>
     </div>
   </div>
+  <%= javascript_pack_tag "user", "data-turbolinks-track": "reload" %>
 </div>

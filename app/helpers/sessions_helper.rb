@@ -25,6 +25,6 @@ module SessionsHelper
   end
 
   def current_cart
-    session[:cart] ||= {}
+    @current_cart ||= session[:cart]
   end
 end
