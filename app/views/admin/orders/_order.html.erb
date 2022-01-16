@@ -1,5 +1,10 @@
 <tr>
   <td>
+    <% if order.rejected? || order.canceled? %>
+      <%= check_box_tag :order_ids, order.id %>
+    <% end %>
+  </td>
+  <td>
     <p>
       <%= order.user_name %><br>
       <%= order.address_phone %>
@@ -10,13 +15,13 @@
   <td>
     <% if order.canceled? %>
       <div class="text-mute"><%= t ".user_canceled_order" %></div>
-      <%= link_to t(".delete_order"), admin_order_path(order), class: "btn btn-danger mt-2", method: :delete, data: {confirm: t(".delete_order_confirm")} %>
+      <%= link_to t(".delete_order"), admin_order_path(order), class: "btn btn-danger mt-2 destroy-order", method: :delete, data: {confirm: t(".delete_order_confirm")}, remote: :true %>
     <% elsif order.rejected? %>
       <div class="text-mute">
         <div><%= t ".rejected_order" %></div>
         <div><%= order.rejected_reason %></div>
       </div>
-      <%= link_to t(".delete_order"), admin_order_path(order), class: "btn btn-danger mt-2", method: :delete, data: {confirm: t(".delete_order_confirm")} %>
+      <%= link_to t(".delete_order"), admin_order_path(order), class: "btn btn-danger mt-2 destroy-order", method: :delete, data: {confirm: t(".delete_order_confirm")}, remote: :true %>
     <% elsif order.resolved? %>
       <div class="text-mute"><%= t ".resolved_order" %></div>
       <div><%= order.delivered_at %></div>

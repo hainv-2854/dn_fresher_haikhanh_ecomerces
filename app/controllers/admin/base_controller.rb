@@ -5,10 +5,9 @@ class Admin::BaseController < ApplicationController
 
   private
   def check_admin
-    return if current_user.is_admin?
+    return if current_user.admin?
 
-    store_location_for(:admin, request.fullpath)
-    flash[:danger] = t "admin.permission"
+    flash[:danger] = t "admin.permission_denied"
     redirect_to root_path
   end
 end
