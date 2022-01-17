@@ -13,6 +13,14 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :orders, only: %i(new create) do
+      collection do
+        get "new", to: "orders#new"
+        post "new", to: "orders#create"
+      end
+    end
+
+
     resources :products, only: %i(index show)
     namespace :admin do
       root "static_pages#home"

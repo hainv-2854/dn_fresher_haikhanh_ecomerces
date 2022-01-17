@@ -66,6 +66,17 @@ $(document).ready(function(){
     }
   });
 
+  if($('input[name="add_address_other"]').is(':checked'))
+
+    $('.other-address').show();
+  else
+
+    $('.other-address').hide();
+
+  $('input[name="add_address_other"').change(function(){
+    $('.other-address').toggle();
+  });
+
   function using_ajax($parent, quantity, productId, totalPriceCart, totalPriceItem, priceProduct){
     $.ajax({
       method: 'put',

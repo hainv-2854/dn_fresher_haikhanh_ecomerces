@@ -4151,10 +4151,6 @@ article.single-post blockquote p:last-child::after{
 .order-summary .summary-info.total-info .title{
     color: #333333;
 }
-.row-in-form .checkbox-field input[type="checkbox"],
-.summary .checkout-info .checkbox-field input[type="checkbox"]{
-    display: none;
-}
 .row-in-form .checkbox-field input[type="checkbox"] + span,
 .summary .checkout-info .checkbox-field input[type="checkbox"] + span{
     font-size: 14px;
@@ -5022,6 +5018,7 @@ table.shop_attributes tbody{
 }
 .wrap-address-billing{
     display: inline-block;
+    width: 100%;
 }
 .payment-method .choose-payment-methods{
     border-top: 1px solid #e6e6e6;

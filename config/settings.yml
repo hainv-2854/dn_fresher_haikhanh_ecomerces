@@ -1,8 +1,13 @@
 regex:
   email: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 length:
+  digit_1: 1
   per_page_12: 12
   per_page_5: 5
+  digit_9: 9
+  digit_10: 10
+  digit_11: 11
+  digit_225: 225
   zero: 0
 admin:
   product_sorts: [["All", 1], ["Oldest", 2], ["Newest", 3], ["Price ASC", 4], ["Price DESC", 5]]

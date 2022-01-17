@@ -151,7 +151,7 @@ en:
       invalid_email_password: "Login fail"
   products:
     product:
-      add_to_cart: "Thêm vào giỏ hàng"
+      add_to_cart: "Add to cart"
     index:
       title: "Products"
       home: "Home"
@@ -201,3 +201,27 @@ en:
       delete_success: "Delete success"
     load_product:
       not_found: "Not found product"
+  orders:
+    new:
+      please_login: "Please login"
+      home: "Home"
+      checkout: "Checkout"
+      billing_address: "Billing Address"
+      ship_address_other: "Ship to a different address?"
+      address_other: "Address other"
+      phone: "Phone other"
+      order_summary: "ORDER SUMMARY"
+      quantity_product: "Quantity Product"
+      grand_total: "Grand Total"
+      order_empty: "Order Empty"
+      product_name: "Products Name"
+      quantity: "quantity"
+      price: "Price (VND)"
+      total_item: "Total price (VND)"
+      not_found: "Not found product"
+    create:
+      failed: "Check out fails"
+      success: "Check out success"
+      please_update_quantity: "Please update quantity"
+      not_found: "Not found product"
+      error_message: "Quantity of %{product} is not enough"
