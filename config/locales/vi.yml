@@ -175,5 +175,8 @@ vi:
       not_found: "Không tìm thấy sản phẩm"
     destroy:
       not_found: "Không tìm thấy sản phẩm"
+      delete_success: "Xóa thành công"
+    destroy_all:
+      delete_success: "Xóa thành công"
     load_product:
       not_found: "Không tìm thấy sản phẩm"

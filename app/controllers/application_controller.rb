@@ -17,4 +17,8 @@ class ApplicationController < ActionController::Base
   def load_cart
     session[:cart] ||= {}
   end
+
+  def redirect_back_current
+    redirect_back fallback_location: root_path
+  end
 end

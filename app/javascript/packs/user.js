@@ -16,7 +16,7 @@ $(document).ready(function(){
     if (confirmation) {
       $.ajax({
         method: 'delete',
-        url: 'carts/delete',
+        url: 'carts/' + productId,
         data: { product_id: productId },
         success: function(reponsive){
           $('.count-items-cart').text(countItemsCart - 1);
@@ -56,13 +56,14 @@ $(document).ready(function(){
     {
       $parent.find('input[name=quantity]').val(1);
       quantity = 1;
+      $('.alert').remove();
     }
     else
     {
       $parent.find('input[name=quantity]').val(quantity - 1);
       quantity = quantity -1;
+      using_ajax($parent, quantity, productId, totalPriceCart, totalPriceItem, priceProduct);
     }
-    using_ajax($parent, quantity, productId, totalPriceCart, totalPriceItem, priceProduct);
   });
 
   function using_ajax($parent, quantity, productId, totalPriceCart, totalPriceItem, priceProduct){
