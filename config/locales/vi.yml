@@ -13,6 +13,7 @@ vi:
     product_manager: "Quản lý sản phẩm"
     category_manager: "Quản lý danh mục"
     order_manager: "Quản lý đơn hàng"
+    permission_denied: "Không có quyền truy cập"
     products:
       index:
         sort: "Sắp xếp"
@@ -41,10 +42,25 @@ vi:
         total_price: "Tổng tiền"
         delivered: "Đã giao"
         action: "Hành động"
+        pending_orders: "Chờ: "
+        accept_orders: "Chấp nhận: "
+        resolved_orders: "Đã giao: "
+        rejected_orders: "Từ chối: "
+        canceled_orders: "Khách hủy: "
+        delete_orders_selected: "Xóa đơn hàng đã chọn"
+        delete_orders_selected_confirm: "Bạn có chắc chắn muốn xóa đơn hàng đã chọn?"
+        check_all: "Chọn tất cả"
         no_order_found: "Không tìm thấy đơn hàng"
       update:
         update_status_success: "Cập nhật thành công"
         update_status_fail: "Cập nhật thất bại - Trạng thái phải là: [Accept, Resolved, Rejected]"
+      show:
+        not_found: "Không tìm thấy đơn hàng"
+      destroy:
+        destroy_success: "Xóa đơn hàng thành công"
+        destroy_fail: "Xóa đơn hàng thất bại"
+        destroy_denied: "Xóa đơn hàng thất bại - Trạng thái phải là: [Rejected, Canceled]"
+        not_found: "Order not found"
       order:
         save_change: "Lưu thay đổi"
         delete_order: "Xóa đơn hàng"
@@ -53,6 +69,11 @@ vi:
         resolved_order: "Đã giao: "
         rejected_order: "Đơn bị từ chối: "
         rejected_reason: "Lý do từ chối:"
+    bulk_orders:
+      destroy:
+        destroy_success: "Xóa đơn hàng thành công"
+        destroy_fail: "Xóa đơn hàng thất bại"
+        destroy_denied: "Xóa đơn hàng thất bại - Trạng thái phải là: [Rejected, Canceled]"
     order_details:
       index:
         back: "Quay lại"

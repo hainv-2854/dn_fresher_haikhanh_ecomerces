@@ -1,0 +1,45 @@
+.btn-pending {
+  color: #212529;
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+.btn-pending:hover {
+  color: #212529;
+  background-color: #e0a800;
+}
+.btn-accept {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+.btn-accept:hover {
+  color: #fff;
+  background-color: #0069d9;
+}
+.btn-resolved {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
+.btn-resolved:hover {
+  color: #fff;
+  background-color: #1e7e34;
+}
+.btn-rejected {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+.btn-rejected:hover {
+  color: #fff;
+  background-color: #5a6268;
+}
+.btn-canceled {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+.btn-canceled:hover {
+  color: #fff;
+  background-color: #bd2130;
+}

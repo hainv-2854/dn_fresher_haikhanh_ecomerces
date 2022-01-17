@@ -8,6 +8,9 @@ class Order < ApplicationRecord
   enum status: {pending: 0, accept: 1, resolved: 2, rejected: 3, canceled: 4}
 
   scope :recent_orders, ->{order(status: :asc, created_at: :desc)}
+  scope :filter_by_name, ->(n){joins(:user).where("name LIKE ?", "%#{n}%")}
+  scope :load_by_ids, ->(ids){where id: ids}
+  scope :not_rejected_canceled, ->{where.not(status: [:rejected, :canceled])}
 
   def calculate_total
     order_details.reduce(0) do |total, item|

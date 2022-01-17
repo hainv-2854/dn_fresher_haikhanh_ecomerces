@@ -13,6 +13,7 @@ en:
     product_manager: "Product Manager"
     category_manager: "Category Manager"
     order_manager: "Order Manager"
+    permission_denied: "Permission Denied"
     products:
       index:
         sort: "Sort"
@@ -41,10 +42,25 @@ en:
         total_price: "Total Price"
         delivered: "Delivered"
         action: "Action"
+        pending_orders: "Pending: "
+        accept_orders: "Accept: "
+        resolved_orders: "Resolved: "
+        rejected_orders: "Rejected: "
+        canceled_orders: "Canceled: "
+        delete_orders_selected: "Delete Orders Selected"
+        delete_orders_selected_confirm: "Are you sure to delete orders selected?"
+        check_all: "Check All"
         no_order_found: "No order found"
       update:
         update_status_success: "Update status success"
         update_status_fail: "Status update fail - status must be: [Accept, Rejected, Resolved]"
+      show:
+        not_found: "Order not found"
+      destroy:
+        destroy_success: "Delete order success"
+        destroy_fail: "Delete order fail"
+        destroy_denied: "Delete order fail - order status must be: [Rejected, Canceled]"
+        not_found: "Order not found"
       order:
         save_change: "Save Change"
         delete_order: "Delete Order"
@@ -53,6 +69,11 @@ en:
         resolved_order: "Resolved order: "
         rejected_order: "Rejected order: "
         rejected_reason: "Rejected reason:"
+    bulk_orders:
+      destroy:
+        destroy_success: "Delete orders success"
+        destroy_fail: "Delete orders fail"
+        destroy_denied: "Delete orders fail - orders status must be: [Rejected, Canceled]"
     order_details:
       index:
         back: "Back"

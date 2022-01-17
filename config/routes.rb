@@ -20,6 +20,9 @@ Rails.application.routes.draw do
       delete "/logout", to: "static_pages#destroy"
       resources :products
       resources :users
+      scope :orders do
+        resource :bulk_order
+      end
       resources :orders do
         resources :order_details, only: :index
       end
