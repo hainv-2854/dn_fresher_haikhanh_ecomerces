@@ -7,6 +7,9 @@ en:
       product_categories: "Product Categories"
   admin:
     title: "Admin E-com"
+    orders_manager: "Orders Manager"
+    orders_trash_manager: "Orders Trash Manager"
+    day_singular: "day"
     search: "Search"
     dashboard: "Dashboard"
     user_manager: "User Manager"
@@ -34,6 +37,7 @@ en:
         name: "Name"
         status: "Status"
         clear_search: "Clear Search"
+        search_result: "Search Result: "
         user_name: "Orderer Name"
         user_phone: "Phone Number"
         created_at: "Created at"
@@ -49,6 +53,7 @@ en:
         canceled_orders: "Canceled: "
         delete_orders_selected: "Delete Orders Selected"
         delete_orders_selected_confirm: "Are you sure to delete orders selected?"
+        trash: "Trash"
         check_all: "Check All"
         no_order_found: "No order found"
       update:
@@ -61,6 +66,31 @@ en:
         destroy_fail: "Delete order fail"
         destroy_denied: "Delete order fail - order status must be: [Rejected, Canceled]"
         not_found: "Order not found"
+      delete:
+        delete_success: "Delete order success"
+        destroy_fail: "Delete order fail"
+        destroy_denied: "Delete order fail - order status must be: [Rejected, Canceled]"
+        delete_fail: "Delete order fail"
+        not_found: "Order not found"
+      restore:
+        restore_success: "Restore order success"
+      trash:
+        orders_page: "Orders page"
+        destroy_orders_selected: "Destroy orders selected"
+        restore_orders_selected: "Restore orders selected"
+        user_name: "Orderer Name"
+        created_at: "Created at"
+        address: "Address"
+        status: "Status"
+        total_price: "Total Price"
+        delivered: "Delivered"
+        action: "Action"
+        search_result: "Search Result: "
+      trash_order:
+        destroy_order: "Destroy order"
+        restore_order: "Restore order"
+        destroy_order_confirm: "Are you sure to destroy forever this order?"
+        auto_delete_after: "Auto delete after: %{count}"
       order:
         save_change: "Save Change"
         delete_order: "Delete Order"

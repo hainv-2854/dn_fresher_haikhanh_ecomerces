@@ -1,4 +1,4 @@
-<% zone.order_details.each do |detail| %>
+<% zone.order_details.with_deleted.each do |detail| %>
   <tr>
     <td><%= detail.product_name %></td>
     <td><%= image_tag show_image detail.product %></td>

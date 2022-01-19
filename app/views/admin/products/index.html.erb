@@ -49,7 +49,7 @@
       <%= render @products %>
     </tbody>
   </table>
-  <%== pagy_bootstrap_nav(@pagy) %>
+  <%== pagy_bootstrap_nav @pagy %>
 <% else %>
   <div class="alert alert-warning mt-4">
     <strong><%= t ".no_product_found" %></strong>

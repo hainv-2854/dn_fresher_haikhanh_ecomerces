@@ -1,0 +1,6 @@
+$('.delete-order').bind('ajax:success', function(){
+  alert('<%= t ".delete_success" %>');
+  $(this).closest('tr').fadeOut();
+  $('.btn-<%= @order.status %> .number-order').text(parseInt($('.btn-<%= @order.status %> .number-order').text()) - 1);
+  $('.trash-orders .number-order').text(parseInt($('.trash-orders .number-order').text()) + 1);
+});

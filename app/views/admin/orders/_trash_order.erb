@@ -1,0 +1,43 @@
+<tr>
+  <td>
+    <% if trash_order.rejected? || trash_order.canceled? %>
+      <%= check_box_tag :order_ids, trash_order.id %>
+    <% end %>
+  </td>
+  <td>
+    <p>
+      <%= trash_order.user_name %><br>
+      <%= trash_order.address_phone %>
+    </p>
+  </td>
+  <td><%= trash_order.address_address_detail %></td>
+  <td>
+    <%= l(trash_order.created_at, format: "%d %B %Y, %H:%M:%S") %>
+    <div>
+      <i class="far fa-trash-alt"></i>
+      <%= t ".auto_delete_after", count: pluralize(trash_order.calculate_time_remain_to_destroy, t("admin.day_singular")) %>
+    </div>
+  </td>
+  <td>
+    <% if trash_order.canceled? %>
+      <div class="text-mute"><%= t ".user_canceled_order" %></div>
+      <%= link_to t(".destroy_order"), admin_order_path(trash_order), class: "btn btn-danger d-block mt-2 destroy-order", method: :delete, data: {confirm: t(".destroy_order_confirm")}, remote: :true %>
+      <%= link_to t(".restore_order"), restore_admin_order_path(trash_order), class: "btn btn-resolved d-block mt-2 restore-order", method: :patch, remote: :true %>
+    <% elsif trash_order.rejected? %>
+      <div class="text-mute">
+        <div><%= t ".rejected_order" %></div>
+        <div><%= trash_order.rejected_reason %></div>
+      </div>
+      <%= link_to t(".destroy_order"), admin_order_path(trash_order), class: "btn btn-danger d-block mt-2 destroy-order", method: :delete, data: {confirm: t(".destroy_order_confirm")}, remote: :true %>
+      <%= link_to t(".restore_order"), restore_admin_order_path(trash_order), class: "btn btn-resolved d-block mt-2 restore-order", method: :patch, remote: :true %>
+    <% end %>
+  </td>
+  <td>
+    <%= number_to_currency(trash_order.calculate_total_deleted, locale: :vi) %>
+  </td>
+  <td class="text-center">
+    <%= link_to admin_order_path(trash_order) do %>
+      <i class="fas fa-eye"></i>
+    <% end %>
+  </td>
+</tr>

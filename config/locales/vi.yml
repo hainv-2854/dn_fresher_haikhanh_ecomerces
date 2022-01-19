@@ -7,6 +7,9 @@ vi:
       product_categories: "Danh mục sản phẩm"
   admin:
     title: "Quản lý E-com"
+    orders_manager: "Quản lý đơn hàng"
+    orders_trash_manager: "Quản lý đơn hàng rác"
+    day_singular: "ngày"
     search: "Tìm kiếm"
     dashboard: "Bảng điều khiển"
     user_manager: "Quản lý người dùng"
@@ -34,6 +37,7 @@ vi:
         name: "Tên"
         status: "Trạng thái"
         clear_search: "Xóa tìm kiếm"
+        search_result: "Kết quả tìm kiếm: "
         user_name: "Tên người đặt"
         user_phone: "Số điện thoại"
         created_at: "Ngày đặt"
@@ -49,6 +53,7 @@ vi:
         canceled_orders: "Khách hủy: "
         delete_orders_selected: "Xóa đơn hàng đã chọn"
         delete_orders_selected_confirm: "Bạn có chắc chắn muốn xóa đơn hàng đã chọn?"
+        trash: "Thùng rác"
         check_all: "Chọn tất cả"
         no_order_found: "Không tìm thấy đơn hàng"
       update:
@@ -61,6 +66,31 @@ vi:
         destroy_fail: "Xóa đơn hàng thất bại"
         destroy_denied: "Xóa đơn hàng thất bại - Trạng thái phải là: [Rejected, Canceled]"
         not_found: "Order not found"
+      delete:
+        delete_success: "Xóa đơn hàng thành công"
+        destroy_fail: "Xóa đơn hàng thất bại"
+        destroy_denied: "Xóa đơn hàng thất bại - Trạng thái phải là: [Rejected, Canceled]"
+        delete_fail: "Xóa đơn hàng thất bại"
+        not_found: "Đơn hàng không tìm thấy"
+      restore:
+        restore_success: "Khôi phục đơn hàng thành công"
+      trash:
+        orders_page: "Trang đơn hàng"
+        destroy_orders_selected: "Xóa đơn hàng đã chọn"
+        restore_orders_selected: "Khôi phục đơn hàng đã chọn"
+        user_name: "Tên người đặt"
+        created_at: "Ngày đặt"
+        address: "Địa chỉ"
+        status: "Trạng thái"
+        total_price: "Tổng tiền"
+        delivered: "Đã giao"
+        action: "Hành động"
+        search_result: "Kết quả tìm kiếm: "
+      trash_order:
+        destroy_order: "Xóa vĩnh viễn"
+        restore_order: "Khôi phục"
+        destroy_order_confirm: "Bạn có chắc chắn muốn xóa vĩnh viễn đơn hàng này?"
+        auto_delete_after: "Tự động xóa sau: %{count}"
       order:
         save_change: "Lưu thay đổi"
         delete_order: "Xóa đơn hàng"
