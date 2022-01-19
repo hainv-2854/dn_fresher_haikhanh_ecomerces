@@ -39,7 +39,7 @@ end
   Address.create(
     user_id: n + 1,
     address_detail: Faker::Address.street_address,
-    phone: Faker::PhoneNumber.phone_number,
+    phone: "037644579#{n+1}",
   )
 end
 
@@ -50,4 +50,3 @@ end
   o.order_details.build product_id: 1, quantity: 1, price: 1000 + n * 100
   o.save!
 end
-

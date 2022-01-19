@@ -201,3 +201,27 @@ vi:
       delete_success: "Xóa thành công"
     load_product:
       not_found: "Không tìm thấy sản phẩm"
+  orders:
+    new:
+      please_login: "Vui lòng đăng nhập"
+      home: "Trang chủ"
+      checkout: "Thanh toán"
+      billing_address: "Địa chỉ gửi đến"
+      ship_address_other: "Gửi đến đại chỉ khác?"
+      address_other: "Địa chỉ khác"
+      phone: "Số điện thoại"
+      order_summary: "TÓM TẮT"
+      quantity_product: "Tổng sản phẩm"
+      grand_total: "Tổng tiền thanh toán"
+      order_empty: "Trống"
+      product_name: "Tên sản phẩm"
+      quantity: "Số lượng"
+      price: "Giá (VNĐ)"
+      total_item: "Thành tiền (VNĐ)"
+      not_found: "Không tìm thấy sản phẩm"
+    create:
+      failed: "Thanh toán thất bại"
+      success: "Thanh tóa thành công"
+      please_update_quantity: "Vui lòng cập nhật lại số lượng"
+      not_found: "Không tìm thấy sản phẩm"
+      error_message: "Số lượng của %{product} không đủ"

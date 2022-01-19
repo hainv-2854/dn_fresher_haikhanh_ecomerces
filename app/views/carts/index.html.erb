@@ -54,7 +54,7 @@
       <p class="summary-info total-info "><span class="title"><%= t ".quantity_product" %></span><strong class="index count-items-cart"><%= @cart_items.count %></strong></p>
       <p class="summary-info total-info "><span class="title"><%= t ".total" %></span><strong class="index total-price-cart"><%= number_with_delimiter(@total_price_cart, :delimiter => '.') %></strong></p>
       <div class="checkout-info col-12 px-5">
-        <%= link_to t(".check_out"), "#", class: "btn btn-checkout" %>
+        <%= link_to t(".check_out"), new_order_path, class: "btn btn-checkout" %>
       </div>
     </div>
     <div class="update-clear col-4 pt-5">

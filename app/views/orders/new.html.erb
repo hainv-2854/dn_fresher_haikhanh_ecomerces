@@ -1,0 +1,84 @@
+<% provide :title, t(".checkout") %>
+<div class="wrap-breadcrumb">
+  <ul>
+    <li class="item-link"><%= link_to t(".home"), home_path, class: "link" %></li>
+    <li class="item-link"><span><%= t ".checkout" %></span></li>
+  </ul>
+</div>
+<div class=" main-content-area">
+  <% if !@cart_items.empty? %>
+    <%= form_tag new_order_path, method: :post do %>
+      <div class="wrap-iten-in-cart">
+        <div class="row">
+          <h3 class="box-title col-5"><%= t ".product_name" %></h3>
+          <h3 class="box-title col-2"><%= t ".price" %></h3>
+          <h3 class="box-title col-3"><%= t ".quantity" %></h3>
+          <h3 class="box-title col-2"><%= t ".total_item" %></h3>
+        </div>
+        <ul class="products-cart">
+          <% @cart_items.each do |item| %>
+            <li class="pr-cart-item">
+              <div class="product-image col-1">
+                <figure>
+                  <%= image_tag show_image(item.dig :product), alt: "" %>
+                </figure>
+              </div>
+              <div class="product-name col-3">
+                <%= link_to item.dig(:product).name, product_path(item.dig(:product).id), class: "link-to-product" %>
+              </div>
+              <div class="price-field produtc-price col-2"><p class="price price-product"><%= number_with_delimiter(item.dig(:product).price, :delimiter => '.') %></p></div>
+              <div class="quantity col-3">
+                <div class="quantity text-center">
+                  <p><%= item.dig(:quantity_order) %></p>
+                </div>
+              </div>
+              <div class="price-field sub-total col-2"><p class="price total-price-item"><%= number_with_delimiter(item.dig(:total_price_item), :delimiter => '.') %></p></div>
+            </li>
+            <div class="col-12">
+              <% if @error_messages.present? %>
+                <p class="text-danger"><%= @error_messages[:exist][item.dig(:product).id] %></p>
+                <p class="text-danger"><%= @error_messages[:invalid_quantity][item.dig(:product).id] %></p>
+              <% end %>
+            </div>
+          <% end %>
+        </ul>
+      </div>
+      <div class="wrap-address-billing">
+        <h3 class="box-title"><%= t ".billing_address" %></h3>
+        <div class="row">
+          <div class="row-in-form col-12">
+            <%= select_tag(:address,
+              options_from_collection_for_select(@addresses, :id, :address_detail), class: "form-control") %>
+          </div>
+          <div class="row-in-form fill-wife">
+            <label class="checkbox-field">
+              <%= check_box_tag :add_address_other, 1 %>
+              <%= t ".ship_address_other" %>
+            </label>
+          </div>
+          <div class="row-in-form other-address col-12">
+            <div>
+              <label><%= t ".address_other" %><span>*</span></label>
+              <%= text_field_tag :address_other %>
+            </div>
+            <div>
+              <label><%= t ".phone" %><span>*</span></label>
+              <%= text_field_tag :phone_other %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="summary summary-checkout">
+        <div class="summary-item payment-method">
+          <h4 class="title-box"><%= t ".order_summary" %></h4>
+          <p class="summary-info grand-total"><span><%= t ".quantity_product" %></span><span class="grand-total-price"><%= @cart_items.count %></span></p>
+          <p class="summary-info grand-total"><span><%= t ".grand_total" %></span><span class="grand-total-price"><%= number_to_currency(@total_price_cart, locale: :vi) %></span></p>
+          <%= submit_tag t(".checkout"), class: "btn btn-medium" %>
+        </div>
+      </div>
+    <% end %>
+    <%= javascript_pack_tag "user", "data-turbolinks-track": "reload" %>
+  <% else %>
+    <div><%= t ".order_empty" %></div>
+  <% end %>
+</div>
