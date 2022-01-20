@@ -23,12 +23,14 @@ gem "puma", "~> 5.0"
 gem "rails", "~> 6.1.4", ">= 6.1.4.1"
 gem "rails-i18n"
 gem "sass-rails", ">= 6"
+gem "simplecov"
+gem "simplecov-rcov"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
 
 group :development, :test do
   gem "byebug", platforms: %i(mri mingw x64_mingw)
-  gem "rspec-rails", "~> 4.0.1"
+  gem "rspec-rails", "~> 5.0.0"
 end
 
 group :development do

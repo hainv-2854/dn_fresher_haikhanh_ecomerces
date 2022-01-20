@@ -41,11 +41,11 @@ config/database.yml
 /config/application.yml
 
 /storage
-
+coverage/*
+coverage/
 /public/packs
 /public/packs-test
 /node_modules
-/spec
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
