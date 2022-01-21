@@ -17,11 +17,11 @@ RSpec.describe CartsController, type: :controller do
     end
 
     it "assigns @cart_items" do
-      expect(assigns(:cart_items)).to eq @cart_items
+      expect(assigns :cart_items).to eq @cart_items
     end
 
     it "assigns @total_price_cart" do
-      expect(assigns(:total_price_cart)).to eq @total_price_cart
+      expect(assigns :total_price_cart).to eq @total_price_cart
     end
 
     it "renders the index template" do
