@@ -22,13 +22,13 @@ class CartsController < ApplicationController
   def destroy
     current_cart.delete params[:product_id]
     flash[:success] = t ".delete_success"
-    redirect_back_current
+    redirect_to carts_path
   end
 
   def destroy_all
     session[:cart] = {}
     flash[:success] = t ".delete_success"
-    redirect_back_current
+    redirect_to carts_path
   end
 
   private
