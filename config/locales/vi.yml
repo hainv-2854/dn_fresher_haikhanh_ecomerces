@@ -59,13 +59,15 @@ vi:
       update:
         update_status_success: "Cập nhật thành công"
         update_status_fail: "Cập nhật thất bại - Trạng thái phải là: [Accept, Resolved, Rejected]"
+        not_found: "Không tìm thấy đơn hàng"
       show:
         not_found: "Không tìm thấy đơn hàng"
       destroy:
         destroy_success: "Xóa đơn hàng thành công"
         destroy_fail: "Xóa đơn hàng thất bại"
         destroy_denied: "Xóa đơn hàng thất bại - Trạng thái phải là: [Rejected, Canceled]"
-        not_found: "Order not found"
+        not_found: "Không tìm thấy đơn hàng"
+        destroy_restore_fail: "Không thể xóa hoặc khôi phục đơn hàng - Áp dụng cho đơn hàng trong thùng rác"
       delete:
         delete_success: "Xóa đơn hàng thành công"
         destroy_fail: "Xóa đơn hàng thất bại"
@@ -74,6 +76,7 @@ vi:
         not_found: "Đơn hàng không tìm thấy"
       restore:
         restore_success: "Khôi phục đơn hàng thành công"
+        not_found: "Khôi phục đơn hàng thất bại"
       trash:
         orders_page: "Trang đơn hàng"
         destroy_orders_selected: "Xóa đơn hàng đã chọn"
