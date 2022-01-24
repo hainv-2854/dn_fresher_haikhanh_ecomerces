@@ -18,3 +18,4 @@ order:
   status_pending: [["pending", 0], ["accept", 1], ["rejected", 3]]
   status_accept: [["accept", 1], ["resolved", 2], ["rejected", 3]]
   status_rejected: [["accept", 1] ,["rejected", 3]]
+  time_in_trash: 14

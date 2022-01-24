@@ -46,15 +46,17 @@ function deleteOrders() {
   var $btnDeleteOrders = $('.delete-orders');
   $btnDeleteOrders.click(function() {
     var orderIds = getSelectedCheckbox($('.orders-list'));
-    var confirm_msg = 'Are you sure you want to delete the selected orders?';
-    console.log('orderIds', orderIds);
-    if(orderIds.length > 0 && confirm(confirm_msg)) {
+    var confirmMessage = 'Are you sure you want to delete the selected orders?';
+    if(orderIds.length > 0 && confirm(confirmMessage)) {
       $.ajax({
         method: 'delete',
-        url: 'orders/bulk_order',
+        url: 'orders/bulk_order/delete',
         data: { order_ids: orderIds },
         success: function(data) {
           alert('Orders deleted successfully!');
+          if(data.deleted_count > 0) {
+            $('.trash-orders .number-order').text(parseInt($('.trash-orders .number-order').text()) + data.deleted_count);
+          }
           if(data.rejected_count > 0) {
             $('.btn-rejected .number-order').text(parseInt($('.btn-rejected .number-order').text()) - data.rejected_count);
           }
@@ -66,6 +68,72 @@ function deleteOrders() {
       });
     } else {
       alert('Please select orders to delete');
+    }
+  });
+}
+
+// destroy selected orders
+function destroyOrders() {
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+    }
+  });
+  var $btnDestroyOrders = $('.destroy-orders');
+  $btnDestroyOrders.click(function() {
+    var orderIds = getSelectedCheckbox($('.orders-list'));
+    var confirmMessage = 'Are you sure you want to destroy forever the selected orders?';
+    if(orderIds.length > 0 && confirm(confirmMessage)) {
+      $.ajax({
+        method: 'delete',
+        url: 'bulk_order',
+        data: { order_ids: orderIds },
+        success: function(data) {
+          alert('Orders destroyed successfully!');
+          if(data.rejected_count > 0) {
+            $('.btn-rejected .number-order').text(parseInt($('.btn-rejected .number-order').text()) - data.rejected_count);
+          }
+          if(data.canceled_count > 0) {
+            $('.btn-canceled .number-order').text(parseInt($('.btn-canceled .number-order').text()) - data.canceled_count);
+          }
+          $('.orders-list').find('input[type=checkbox]:checked').closest('tr').fadeOut();
+        }
+      });
+    } else {
+      alert('Please select orders to destroy');
+    }
+  });
+}
+
+// restore selected orders
+function restoreOrders() {
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+    }
+  });
+  var $btnRestoreOrders = $('.restore-orders');
+  $btnRestoreOrders.click(function() {
+    var orderIds = getSelectedCheckbox($('.orders-list'));
+    var confirmMessage = 'Are you sure you want to restore the selected orders?';
+    if(orderIds.length > 0 && confirm(confirmMessage)) {
+      $.ajax({
+        method: 'patch',
+        url: 'bulk_order/restore',
+        data: { order_ids: orderIds },
+        success: function(data) {
+          alert('Orders restored successfully!');
+          if(data.rejected_count > 0) {
+            $('.btn-rejected .number-order').text(parseInt($('.btn-rejected .number-order').text()) - data.rejected_count);
+          }
+          if(data.canceled_count > 0) {
+            $('.btn-canceled .number-order').text(parseInt($('.btn-canceled .number-order').text()) - data.canceled_count);
+          }
+          $('.orders-list').find('input[type=checkbox]:checked').closest('tr').fadeOut();
+        }
+      });
+    } else {
+      alert('Please select orders to restore');
     }
   });
 }
@@ -102,4 +170,6 @@ function getSelectedCheckbox($ordersList){
 
 checkOrderStatusSelect();
 deleteOrders();
+restoreOrders();
+destroyOrders();
 checkboxAllOrder();

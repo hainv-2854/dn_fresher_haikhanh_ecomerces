@@ -3,6 +3,8 @@ class OrderDetail < ApplicationRecord
   belongs_to :product
   delegate :name, to: :product, prefix: true
 
+  acts_as_paranoid
+
   after_create :change_product_quantity
 
   private

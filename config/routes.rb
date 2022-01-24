@@ -29,10 +29,20 @@ Rails.application.routes.draw do
       resources :products
       resources :users
       scope :orders do
-        resource :bulk_order
+        resource :bulk_order do
+          delete "delete", to: "bulk_orders#delete"
+          patch "restore", to: "bulk_orders#restore"
+        end
       end
       resources :orders do
         resources :order_details, only: :index
+        collection do
+          get "trash", to: "orders#trash"
+        end
+        member do
+          delete "delete", to: "orders#delete"
+          patch "restore", to: "orders#restore"
+        end
       end
     end
   end

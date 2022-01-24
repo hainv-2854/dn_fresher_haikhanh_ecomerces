@@ -5,7 +5,7 @@ class Admin::BaseController < ApplicationController
 
   private
   def check_admin
-    return if current_user.admin?
+    return if current_user&.admin?
 
     flash[:danger] = t "admin.permission_denied"
     redirect_to root_path

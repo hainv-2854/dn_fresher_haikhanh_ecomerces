@@ -1,0 +1,5 @@
+$('.restore-order').bind('ajax:success', function(){
+  alert('<%= t ".restore_success" %>');
+  $(this).closest('tr').fadeOut();
+  $('.btn-<%= @order.status %> .number-order').text(parseInt($('.btn-<%= @order.status %> .number-order').text()) - 1);
+});

@@ -1,17 +1,17 @@
-<% provide :title, t("admin.orders_manager") %>
+<% provide :title, t("admin.orders_trash_manager") %>
 <div class="mb-3">
-  <%= link_to trash_admin_orders_path, class: "trash-orders" do %>
-    <%= t ".trash" %> (<span class="number-order"><%= @count_trash_orders %></span>)
+  <%= link_to admin_orders_path, class: "" do %>
+    <%= t ".orders_page" %>
   <% end %>
 </div>
 
 <div class="row align-items-end mb-3">
   <div class="col-md-auto">
-    <%= form_with url: admin_orders_path, method: :get do |form| %>
+    <%= form_with url: trash_admin_orders_path, method: :get do |form| %>
       <div class="row">
         <div class="col-md-auto">
           <%= form.label :user_name, t(".user_name") %>
-          <%= form.text_field :user_name, class: "form-control" %>
+          <%= form.text_field :user_name, class: "form-control", required: true %>
         </div>
         <div class="col-md-auto">
           <label class="d-block">&nbsp;</label>
@@ -22,20 +22,22 @@
   </div>
   <div class="col-md-auto">
     <div>
-      <%= link_to t(".clear_search"), admin_orders_path, class: "btn btn-outline-primary config-showall" %>
+      <%= link_to t(".clear_search"), trash_admin_orders_path, class: "btn btn-outline-primary config-showall" %>
     </div>
   </div>
 </div>
 
-<% if @count_orders_by_status.any? %>
+<% if @count_orders_deleted_by_status.any? %>
   <div class="row mb-3">
-    <% @count_orders_by_status.each do |order| %>
-      <div class="col-md-auto py-2">
-        <%= link_to admin_orders_path(status: "#{order.keys[0]}"), class: "btn btn-#{order.keys[0]}" do %>
-          <%= t ".#{order.keys[0]}_orders" %>
-          <span class="number-order"><%= order.values[0] %></span>
-        <% end %>
-      </div>
+    <% @count_orders_deleted_by_status.each do |order| %>
+      <% if order.keys[0] == "rejected" || order.keys[0] == "canceled" %>
+        <div class="col-md-auto py-2">
+          <%= link_to trash_admin_orders_path(status: "#{order.keys[0]}"), class: "btn btn-#{order.keys[0]}" do %>
+            <%= t "admin.orders.index.#{order.keys[0]}_orders" %>
+            <span class="number-order"><%= order.values[0] %></span>
+          <% end %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 <% end %>
@@ -47,7 +49,10 @@
       <%= label_tag :check_all, t(".check_all"), class: "mb-0" %>
     </div>
     <div class="col-md-auto">
-      <button class="btn btn-primary delete-orders"><%= t ".delete_orders_selected" %></button>
+      <button class="btn btn-danger destroy-orders"><%= t ".destroy_orders_selected" %></button>
+    </div>
+    <div class="col-md-auto">
+      <button class="btn btn-resolved restore-orders"><%= t ".restore_orders_selected" %></button>
     </div>
   </div>
 </div>
@@ -56,7 +61,7 @@
   <div class="mb-3"><%= t(".search_result") %><%= @username_search %></div>
 <% end %>
 
-<% if @orders.any? %>
+<% if @trash_orders.any? %>
   <table class="table table-bordered table-hover orders-list">
     <thead class="thead-inverse|thead-default">
       <tr>
@@ -70,7 +75,7 @@
       </tr>
     </thead>
     <tbody>
-      <%= render @orders %>
+      <%= render partial: "trash_order", collection: @trash_orders %>
     </tbody>
   </table>
   <%== pagy_bootstrap_nav @pagy %>
