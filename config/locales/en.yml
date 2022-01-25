@@ -59,21 +59,24 @@ en:
       update:
         update_status_success: "Update status success"
         update_status_fail: "Status update fail - status must be: [Accept, Rejected, Resolved]"
+        not_found: "Order not found"
       show:
         not_found: "Order not found"
       destroy:
-        destroy_success: "Delete order success"
-        destroy_fail: "Delete order fail"
-        destroy_denied: "Delete order fail - order status must be: [Rejected, Canceled]"
+        destroy_success: "Destroy order success"
+        destroy_fail: "Destroy order fail"
+        destroy_denied: "Destroy order fail - order status must be: [Rejected, Canceled]"
         not_found: "Order not found"
+        destroy_restore_fail: "Destroy or restore order fail - order must be in trash"
       delete:
         delete_success: "Delete order success"
-        destroy_fail: "Delete order fail"
+        destroy_fail: "Destroy order fail"
         destroy_denied: "Delete order fail - order status must be: [Rejected, Canceled]"
         delete_fail: "Delete order fail"
         not_found: "Order not found"
       restore:
         restore_success: "Restore order success"
+        not_found: "Order not found"
       trash:
         orders_page: "Orders page"
         destroy_orders_selected: "Destroy orders selected"

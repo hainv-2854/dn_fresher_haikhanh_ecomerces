@@ -1,4 +1,5 @@
 require "spec_helper"
+require "support/database_cleaner"
 ENV["RAILS_ENV"] ||= "test"
 require File.expand_path("../config/environment", __dir__)
 
@@ -22,6 +23,13 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   config.expect_with :rspec do |c|
     c.syntax = :expect
+  end
+end
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
   end
 end
 

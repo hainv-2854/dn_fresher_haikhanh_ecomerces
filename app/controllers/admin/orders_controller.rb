@@ -93,7 +93,7 @@ class Admin::OrdersController < Admin::BaseController
 
   def valid_status_for_update?
     status_exist? && status_not_current? && status_not_pending? &&
-      !@order.rejected? && !@order.canceled?
+      !@order.rejected? && !@order.canceled? && !@order.resolved?
   end
 
   def check_valid_status_for_delete
