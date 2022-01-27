@@ -3,9 +3,7 @@ Rails.application.routes.draw do
     root "static_pages#home"
     get "/home", to: "static_pages#home"
 
-    get "/login", to: "sessions#new"
-    post "/login", to: "sessions#create"
-    delete "/logout", to: "sessions#destroy"
+    devise_for :users
 
     resources :carts, except: %i(show new edit) do
       collection do

@@ -1,0 +1,106 @@
+vi:
+  devise:
+    confirmations:
+      resend_confirmation: "Gửi lại hướng dẫn xác nhận"
+      confirmed: "Email cua ban da duoc xac thuc thanh cong"
+      send_instructions: "Ban se nhan duoc email xac nhan trong it phut nua. Vui long kiem tra email"
+      send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
+    failure:
+      already_authenticated: "Ban dang dang nhap"
+      inactive: "Tai khoan cua ban chua duoc kick hoat"
+      invalid: "Sai %{authentication_keys} hoac mat khau"
+      locked: "Tai khoan cua ban da bi khoa"
+      last_attempt: "Ban con mot lan thu truoc khi tai khoan bi khoa"
+      not_found_in_database: "Sai %{authentication_keys} hoac mat khau"
+      timeout: "Phien dang nhap da het han, vui long dang nhap lai"
+      unauthenticated: "Ban can dang nhap hoac dang ky de tiep tuc"
+      unconfirmed: "Ban phai xac nhan tai khoan truoc khi tiep tuc"
+    mailer:
+      confirmation_instructions:
+        welcome: "Chào mừng"
+        confirm_your_account: "Bạn có thể xác nhận email tài khoản của mình thông qua liên kết bên dưới:"
+        confirm_my_account: "Xác nhận tài khoản của tôi"
+        subject: "Huong dan xac nhan"
+      reset_password_instructions:
+        change_my_password: "Thay đổi mật khẩu"
+        someone_has_requested: "Ai đó đã yêu cầu một liên kết để thay đổi mật khẩu của bạn. Bạn có thể thực hiện việc này thông qua liên kết bên dưới"
+        subject: "Huong dan dat lai mat khau"
+      unlock_instructions:
+        unlock_my_account: "mở khóa tài khoản cả tôi"
+        click_the_link: "Nhấp vào liên kết bên dưới để mở khóa tài khoản của bạn:"
+        subject: "Huong dan mo khoa"
+      email_changed:
+        welcome: "Chào "
+        contacting_you_to: "Chúng tôi đang liên hệ với bạn để thông báo rằng email của bạn đang được thay đổi thành"
+        subject: "Thay doi email"
+      password_change:
+        contacting_you_to: "Chúng tôi đang liên hệ với bạn để thông báo rằng mật khẩu của bạn đã bị thay đổi."
+        subject: "Thay doi mat khau"
+    omniauth_callbacks:
+      failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
+      success: "Successfully authenticated from %{kind} account."
+    passwords:
+      new:
+        title: "Quên mật khẩu?"
+        home: "Trang chủ"
+        send_me_reset: "Gửi cho tôi hướng dẫn đặt lại mật khẩu"
+      edit:
+        title: "Thay đổi mật khẩu của bạn"
+        home: "Trang chủ"
+        new_password: "Mật khẩu mới"
+        confirm_new_password: "Xác nhận mật khẩu mới"
+        change_my_pass: "Thay đổi mật khẩu của tôi"
+      no_token: "Bạn không thể truy cập trang này nếu không nhận được email đặt lại mật khẩu. Nếu bạn đến từ một email đặt lại mật khẩu, vui lòng đảm bảo rằng bạn đã sử dụng URL đầy đủ được cung cấp."
+      send_instructions: "Bạn sẽ nhận được một email có hướng dẫn về cách đặt lại mật khẩu của mình sau vài phút."
+      send_paranoid_instructions: "Nếu địa chỉ email của bạn tồn tại trong cơ sở dữ liệu của chúng tôi, bạn sẽ nhận được liên kết khôi phục mật khẩu tại địa chỉ email của mình sau vài phút."
+      updated: "Mat khau da duoc thay doi thanh cong, ban hien da dang nhap"
+      updated_not_active: "Mat khau da duoc thay doi thanh cong"
+    registrations:
+      new:
+        title: "Đăng ký tài khoản"
+        home: "Trang chủ"
+        name: "Họ tên"
+        password: "Mật khẩu"
+        sign_up: "Đăng ký"
+      edit:
+        title: "Cập nhật thông tin"
+        home: "Trang chủ"
+        name: "Họ tên"
+        password: "Mật khẩu"
+        update: "Cập nhật"
+        cancel_account: "Xóa tài khoản"
+        confirm_new_password: "Xác nhận mật khẩu"
+        currently_waiting: "Hiện đang chờ xác nhận cho:"
+        back: "Quay lại"
+        comfirm_alert: "Bạn chắc chắn chứ?"
+      destroyed: "Tam biet ! Tai khoan cua ban da bi xoa"
+      signed_up: "Chao mung, ban da dang ky thanh cong"
+      signed_up_but_inactive: "Ban da dang ky thanh cong, tuy nhien chua the dang nhap neeu ban chua kick hoat email"
+      updated: "Your account has been updated successfully."
+      updated_but_not_signed_in: "Your account has been updated successfully, but since your password was changed, you need to sign in again."
+    sessions:
+      new:
+        title: "Đăng nhập"
+        home: "Trang chủ"
+        password: "Mật khẩu"
+      signed_in: "Dang nhap thanh cong"
+      signed_out: "Dang xuat thanh cong"
+      already_signed_out: "Dang xuat thanh cong"
+  errors:
+    messages:
+      already_confirmed: "was already confirmed, please try signing in"
+      confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
+      expired: "has expired, please request a new one"
+      not_found: "not found"
+      not_locked: "was not locked"
+      not_saved:
+        one: "1 error prohibited this %{resource} from being saved:"
+        other: "%{count} errors prohibited this %{resource} from being saved:"
+  shared:
+    links:
+      log_in: "Đăng nhập"
+      sign_up: "Đăng ký"
+      forgot_password: "Quên mật khẩu?"
+      did_not_receive_confirmation_instructions: "không nhận được hướng dẫn xác nhận"
+      did_not_receive_unlock_instructions: "không nhận được hướng dẫn mở khóa"
+      sign_in_with: "đăng nhập với"
