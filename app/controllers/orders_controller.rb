@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
-  before_action :logged_in_user, :load_data_order
+  before_action :authenticate_user!
+  before_action :load_data_order
 
   def new; end
 

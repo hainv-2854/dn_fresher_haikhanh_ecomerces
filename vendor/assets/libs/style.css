@@ -3155,7 +3155,7 @@ vertical-align: top;
     padding: 1px 29px 0 0;
 }
 .wrap-login-item .form-item input[type="checkbox"]{
-    display: none;
+    display: flex;
 }
 .wrap-contacts {
     display: inline-block;
@@ -7150,6 +7150,7 @@ background-color: #888888;
 	background: #333333 !important;
 }
 .wrap-login-item .form-item.login-form {
+    width: 100%;
 	padding-right: 40px;
 	margin-bottom: 65px;
 	padding-left: 40px;
