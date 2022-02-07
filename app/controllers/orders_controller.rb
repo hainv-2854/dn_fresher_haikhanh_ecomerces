@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  authorize_resource
+
   before_action :authenticate_user!
   before_action :load_data_order
 

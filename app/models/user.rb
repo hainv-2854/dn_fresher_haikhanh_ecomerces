@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :orders, dependent: :destroy
   has_many :comments, dependent: :destroy
 
-  enum role: {user: 0, admin: 1}
+  enum role: {user: 0, admin: 1, manager: 2}
 
   def downcase_email
     email.downcase!

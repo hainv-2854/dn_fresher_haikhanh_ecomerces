@@ -1,10 +1,12 @@
-class Admin::ProductsController < Admin::BaseController
-  before_action :find_product, except: :index
+class Admin::ProductsController < Admin::AdminController
+  before_action :find_product, except: %i(index new)
 
   def index
     @pagy, @products = pagy Product.order_by_name,
                             items: Settings.length.per_page_5
   end
+
+  def new; end
 
   def show; end
 

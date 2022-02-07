@@ -14,6 +14,11 @@
           <div class="topbar-menu right-menu">
             <ul>
               <% if user_signed_in? %>
+                <% if can? :read, current_user %>
+                  <li class="menu-item">
+                    <%= link_to t(".admin"), admin_root_path %>
+                  </li>
+                <% end %>
                 <li class="menu-item">
                   <%= t ".welcome"%>
                   <%= link_to current_user.name, edit_user_registration_path %>

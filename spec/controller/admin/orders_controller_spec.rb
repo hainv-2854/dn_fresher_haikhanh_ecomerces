@@ -16,8 +16,6 @@ RSpec.describe Admin::OrdersController, type: :controller do
     it{should route(:patch, "/admin/orders/4/restore").to(action: :restore, id: 4)}
   end
 
-  it_behaves_like "share check current user is admin"
-
   describe "admin is logged in" do
     before {sign_in admin}
 
