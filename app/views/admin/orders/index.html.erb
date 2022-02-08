@@ -4,26 +4,26 @@
     <%= t ".trash" %> (<span class="number-order"><%= @count_trash_orders %></span>)
   <% end %>
 </div>
-
-<div class="row align-items-end mb-3">
-  <div class="col-md-auto">
-    <%= form_with url: admin_orders_path, method: :get do |form| %>
+<div class="row">
+  <div class="col-md-12">
+    <%= search_form_for(@q, url: admin_orders_path, method: :get) do |f| %>
       <div class="row">
-        <div class="col-md-auto">
-          <%= form.label :user_name, t(".user_name") %>
-          <%= form.text_field :user_name, class: "form-control" %>
+        <div class="col-4">
+          <%= f.label :status_eq, t(".status") %>
+          <%= f.select(:status_eq,
+            options_for_select([[t(".all"), -1]]) + options_for_select(get_order_statuses, :selected => @value_status),
+            {}, {:class => "form-control"}) %>
         </div>
-        <div class="col-md-auto">
-          <label class="d-block">&nbsp;</label>
-          <%= form.submit t("admin.search"), class: "btn btn-primary"%>
+        <div class="col-4">
+          <%= f.label :user_name_cont, t(".name") %>
+          <%= f.search_field :user_name_cont, class: "form-control" %>
+        </div>
+        <div class="col-9">
+          <%= f.submit t("admin.search"), class: "btn btn-danger my-4" %>
+          <%= link_to t(".clear_search"), admin_orders_path, class: "btn btn-outline-primary config-showall" %>
         </div>
       </div>
     <% end %>
-  </div>
-  <div class="col-md-auto">
-    <div>
-      <%= link_to t(".clear_search"), admin_orders_path, class: "btn btn-outline-primary config-showall" %>
-    </div>
   </div>
 </div>
 

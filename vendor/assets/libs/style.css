@@ -2475,8 +2475,8 @@ li.menu-item .nav-label.sale-label::before{
     width: 100%;
     text-align: left;
     border-bottom: 1px solid #e6e6e6;
-    padding-bottom: 19px;
-    margin-bottom: 18px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
     float: left;
 }
 .widget ul li a{

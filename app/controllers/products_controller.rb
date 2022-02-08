@@ -1,6 +1,10 @@
 class ProductsController < ApplicationController
+  before_action :load_paramsq, only: :index
+
   def index
-    @pagy, @products = pagy Product.sort_by_price,
+    @q = Product.ransack params[:q]
+    @categories = Category.order_by_name
+    @pagy, @products = pagy @q.result.sort_by_price,
                             items: Settings.length.per_page_12
   end
 

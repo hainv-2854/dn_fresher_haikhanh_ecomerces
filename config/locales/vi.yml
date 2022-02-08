@@ -30,6 +30,12 @@ vi:
         description: "Mô tả"
         image: "Hình ảnh"
         action: "Hành động"
+        category: "Thể loại"
+        all: "Tất cả"
+        from_price: "Giá từ"
+        to_price: "Đến"
+        search: "Tìm kiếm"
+        refresh: "Làm mới"
       new:
         add_product: "Them san pham moi"
       show:
@@ -194,6 +200,12 @@ vi:
     index:
       title: "Danh sách sản phẩm"
       home: "Trang chủ"
+      name: "Tên sản phẩm"
+      all: "Tất cả"
+      from_price: "Giá từ"
+      to_price: "Đến"
+      search: "Tìm kiếm"
+      refresh: "Làm mới"
       digital_electronic: "Kỹ thuật số và công nghệ"
       all_categories: "Tất cả danh mục"
       price: "Giá"

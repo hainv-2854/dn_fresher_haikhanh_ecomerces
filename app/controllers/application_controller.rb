@@ -30,6 +30,17 @@ class ApplicationController < ActionController::Base
     redirect_back fallback_location: root_path
   end
 
+  def load_paramsq
+    return if params[:q].blank?
+
+    if params[:q][:category_id_eq].to_i.zero?
+      params[:q].delete(:category_id_eq)
+      params[:q][:category_id_gteq] = 0
+    else
+      @value_category = params[:q][:category_id_eq]
+    end
+  end
+
   rescue_from CanCan::AccessDenied do
     redirect_to root_path, alert: t("cancancan.permission_denied")
   end
