@@ -4,17 +4,6 @@ RSpec.shared_examples "share presence attribute" do |attributes|
   end
 end
 
-RSpec.shared_examples "share check current user is admin" do
-  before {get :index}
-
-  it "redirect to home page" do
-    should redirect_to(root_path)
-  end
-  it "display flash danger permission denied" do
-    expect(flash[:danger]).to eq I18n.t("admin.permission_denied")
-  end
-end
-
 RSpec.shared_examples "share update order fail" do |old, new|
   let(:order) {FactoryBot.create :order, status: old}
   it "when update fail" do

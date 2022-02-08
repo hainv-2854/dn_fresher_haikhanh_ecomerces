@@ -1,4 +1,6 @@
 vi:
+  cancancan:
+    permission_denied: "Bạn không có quyền truy cập"
   static_pages:
     title: "E-commerce"
     home:
@@ -28,6 +30,8 @@ vi:
         description: "Mô tả"
         image: "Hình ảnh"
         action: "Hành động"
+      new:
+        add_product: "Them san pham moi"
       show:
         description: "Mô tả"
         product_left: "Sản phẩm còn lại"
@@ -121,9 +125,11 @@ vi:
         logout: "Đăng xuất"
   shared:
     header:
+      welcome: "Xin chao"
       logo_text: "E-com"
       login: "Đăng nhập"
       logout: "Đăng xuất"
+      admin: "Trang quan tri"
       sign_up: "Đăng ký"
       hot_line: "Số điện thoại: (+123) 456 789"
       cart: "Giỏ hàng"

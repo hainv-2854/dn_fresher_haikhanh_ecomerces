@@ -26,13 +26,13 @@
     <% end %>
   </div>
 </div>
-
-<div class="row mt-3">
-  <div class="col">
-    <%= link_to t(".add_product"), new_admin_product_path, class: "btn btn-success" %>
+<% if can? :create, Product %>
+  <div class="row mt-3">
+    <div class="col">
+      <%= link_to t(".add_product"), new_admin_product_path, class: "btn btn-success" %>
+    </div>
   </div>
-</div>
-
+<% end %>
 <% if @products.any? %>
   <table class="table table-bordered table-hover table-inverse mt-4">
     <thead class="thead-inverse|thead-default">

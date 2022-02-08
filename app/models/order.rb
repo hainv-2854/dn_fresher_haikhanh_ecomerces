@@ -31,13 +31,13 @@ class Order < ApplicationRecord
 
   def calculate_total
     order_details.reduce(0) do |total, item|
-      total + item.quantity * item.price
+      total + item.quantity * item.product.price
     end
   end
 
   def calculate_total_deleted
     order_details.with_deleted.reduce(0) do |total, item|
-      total + item.quantity * item.price
+      total + item.quantity * item.product.price
     end
   end
 

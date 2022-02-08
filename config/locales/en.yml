@@ -1,4 +1,6 @@
 en:
+  cancancan:
+    permission_denied: "You are not authorized to access this page."
   static_pages:
     title: "E-commerce"
     home:
@@ -28,6 +30,8 @@ en:
         description: "Description"
         image: "Image"
         action: "Action"
+      new:
+        add_product: "Add new product"
       show:
         description: "Description"
         product_left: "Product Left"
@@ -122,9 +126,11 @@ en:
         logout: "Logout"
   shared:
     header:
+      welcome: "Welcome"
       logo_text: "E-com"
       login: "Login"
       logout: "Logout"
+      admin: "Admin"
       sign_up: "Register"
       hot_line: "Hotline: (+123) 456 789"
       cart: "Cart"
