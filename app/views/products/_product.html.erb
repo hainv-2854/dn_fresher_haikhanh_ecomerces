@@ -12,7 +12,11 @@
         <span><%= product.name %></span>
       <% end %>
       <div class="wrap-price"><span class="product-price"><span><%= number_to_currency(product.price, locale: :vi) %></span></div>
-      <%= link_to t(".add_to_cart"), product, class: "btn add-to-cart" %>
+      <%= form_tag carts_path, remote: true do  %>
+        <%= hidden_field_tag :product_id, product.id %>
+        <%= hidden_field_tag :quantity, 1 %>
+        <%= submit_tag t(".add_to_cart"), class: "btn btn-danger add-to-cart" %>
+      <% end %>
     </div>
   </div>
 </li>
