@@ -25,15 +25,24 @@
       </div>
     </div>
     <div class="widget mercado-widget filter-widget price-filter">
-      <h2 class="widget-title"><%= t ".price" %></h2>
-      <div class="widget-content">
-        <div id="slider-range"></div>
-        <p>
-          <label for="amount"><%= t ".price" %> :</label>
-          <input type="text" id="amount" readonly>
-          <button class="filter-submit"><%= t ".filter" %></button>
-        </p>
-      </div>
+      <%= search_form_for @q do |f| %>
+        <div class="widget-content">
+          <div id="slider-range"></div>
+          <h2 class="widget-title"><%= t ".category" %></h2>
+          <%= f.select(:category_id_eq,
+            options_for_select([[t(".all"), 0]]) + options_from_collection_for_select(@categories, :id, :name, @value_category),
+            {}, {:class => "form-control my-4"}) %>
+          <h2 class="widget-title"><%= t ".name" %></h2>
+          <%= f.search_field :name_cont, class: "form-control my-4" %>
+          <h2 class="widget-title"><%= t ".price" %></h2>
+          <%= f.label :price_gteq, t(".from_price") %>
+          <%= f.text_field :price_gteq, class: "form-control"%>
+          <%= f.label :price_lteq, t(".to_price") %>
+          <%= f.text_field :price_lteq, class: "form-control"%>
+          <%= f.submit t(".search"), class: "btn btn-danger my-4" %>
+          <%= link_to t(".refresh"), products_path, :method => :get, class: "btn btn-info" %>
+        </div>
+      <% end %>
     </div>
   </div>
   <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 main-content-area">
@@ -44,6 +53,12 @@
     </div>
     <div class="wrap-shop-control">
       <h1 class="shop-title"><%= t ".digital_electronic" %></h1>
+      <div class="wrap-right">
+        <div class="sort-item orderby ">
+          <%= sort_link(@q, :name, {}, class: "btn btn-info btn-small") %>
+          <%= sort_link(@q, :price, {}, class: "btn btn-info btn-small") %>
+        </div>
+      </div>
     </div>
     <div class="row">
       <ul class="product-list grid-products equal-container">

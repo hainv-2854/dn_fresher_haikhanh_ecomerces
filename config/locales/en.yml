@@ -30,6 +30,12 @@ en:
         description: "Description"
         image: "Image"
         action: "Action"
+        category: "Category"
+        all: "All"
+        from_price: "Price from"
+        to_price: "Price to"
+        search: "Search"
+        refresh: "Refresh"
       new:
         add_product: "Add new product"
       show:
@@ -194,6 +200,12 @@ en:
     index:
       title: "Products"
       home: "Home"
+      name: "Name product"
+      all: "All"
+      from_price: "Price from"
+      to_price: "Price to"
+      search: "Search"
+      refresh: "Refresh"
       digital_electronic: "Digital & Electronics"
       all_categories: "All Categories"
       price: "Price"

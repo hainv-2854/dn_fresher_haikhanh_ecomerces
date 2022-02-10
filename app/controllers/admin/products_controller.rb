@@ -1,8 +1,11 @@
 class Admin::ProductsController < Admin::AdminController
   before_action :find_product, except: %i(index new)
+  before_action :load_paramsq, only: :index
 
   def index
-    @pagy, @products = pagy Product.order_by_name,
+    @q = Product.ransack params[:q]
+    @categories = Category.order_by_name
+    @pagy, @products = pagy @q.result.sort_by_price,
                             items: Settings.length.per_page_5
   end
 

@@ -3,4 +3,6 @@ class Category < ApplicationRecord
   has_many :products, dependent: :destroy
   has_many :childrens, class_name: Category.name, foreign_key: :parent_id,
     dependent: :destroy
+
+  scope :order_by_name, ->{order :name}
 end

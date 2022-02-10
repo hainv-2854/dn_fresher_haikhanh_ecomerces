@@ -1,7 +1,7 @@
 class Admin::OrdersController < Admin::AdminController
   before_action :load_order, except: %i(index trash)
   before_action :get_username_search, only: %i(index trash)
-  before_action :count_trash_orders, only: :index
+  before_action :count_trash_orders, :load_paramsq, only: :index
   before_action :check_valid_status_for_update, :get_status_name, only: :update
   before_action :check_valid_status_for_delete, only: :delete
   before_action :check_valid_status_for_destroy_restore?,
@@ -9,14 +9,13 @@ class Admin::OrdersController < Admin::AdminController
 
   def index
     @count_orders_by_status = Order.count_orders_by_status
-    @orders = if username.present?
-                Order.filter_by_name(username)
-              elsif status.present?
-                Order.send(status)
-              else
-                Order.recent_orders
-              end
-    @pagy, @orders = pagy @orders, items: Settings.length.per_page_5
+    @q = if status.present?
+           Order.send(status).ransack params[:q]
+         else
+           Order.ransack params[:q]
+         end
+    @pagy, @orders = pagy @q.result.recent_orders.includes(:user),
+                          items: Settings.length.per_page_5
   end
 
   def update
@@ -165,5 +164,16 @@ class Admin::OrdersController < Admin::AdminController
   def update_order status, rejected_reason
     @order.update! status: status
     @order.update! rejected_reason: rejected_reason if rejected_reason.present?
+  end
+
+  def load_paramsq
+    return if params[:q].blank?
+
+    if params[:q][:status_eq].to_i == -1
+      params[:q].delete(:status_eq)
+      params[:q][:status_gteq] = -1
+    else
+      @value_status = params[:q][:status_eq]
+    end
   end
 end
