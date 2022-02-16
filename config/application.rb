@@ -14,5 +14,6 @@ module DnFresherHaikhanhEcomerces
     config.time_zone = "Hanoi"
     config.active_record.default_timezone = :local
     config.action_view.embed_authenticity_token_in_remote_forms = true
+    config.autoload_paths << Rails.root.join("lib")
   end
 end

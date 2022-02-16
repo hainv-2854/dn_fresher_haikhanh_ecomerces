@@ -6,6 +6,21 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   include Pagy::Backend
 
+  def authentication!
+    token = request.headers["Jwt-Token"]
+    user_id = Auth.decode(token)["user_id"] if token
+    @current_user = User.find_by(id: user_id) if user_id
+    return if @current_user
+
+    render_json :message, t(".unauthorized"), :unauthorized
+  rescue JWT::DecodeError
+    render_json :message, t(".invalid"), :unauthorized
+  end
+
+  def render_json message, data, status
+    render json: data, status: status
+  end
+
   private
 
   def set_locale

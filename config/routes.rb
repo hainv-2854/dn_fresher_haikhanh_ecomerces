@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  namespace :api do
+    namespace :v1 do
+      resources :products
+      as :user do
+        post "sign_in", to: "sessions#create"
+        post "refresh_token", to: "sessions#refresh_token"
+      end
+    end
+  end
+
   scope "(:locale)", locale: /en|vi/ do
     root "static_pages#home"
     get "/home", to: "static_pages#home"
