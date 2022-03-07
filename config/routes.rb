@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :products
+      resources :orders
+      resources :carts, except: %i(show new edit)
       as :user do
         post "sign_in", to: "sessions#create"
         post "refresh_token", to: "sessions#refresh_token"
@@ -27,7 +29,6 @@ Rails.application.routes.draw do
         post "new", to: "orders#create"
       end
     end
-
 
     resources :products, only: %i(index show)
     namespace :admin do

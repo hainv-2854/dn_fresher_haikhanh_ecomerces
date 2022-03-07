@@ -3,9 +3,7 @@ class Api::V1::ProductsController < ApplicationController
   before_action :find_product, only: %i(show update destroy)
 
   def index
-    @products = Product.includes(:category)
-    byebug
-    render_json :data, @products, :ok
+    @products = Product.includes :category
   end
 
   def show
